@@ -10,7 +10,8 @@ public class WeaponController : MonoBehaviour
 
 	void Start ()
 	{
-		InvokeRepeating ("Fire", delay, fireRate);
+        if(fireRate > 0)
+		    InvokeRepeating ("Fire", delay, fireRate);
 	}
 
 	void Fire ()

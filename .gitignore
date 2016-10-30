@@ -26,5 +26,7 @@ ExportedObj/
 sysinfo.txt
 
 # Builds
+*.exe
+SpaceShooter*
 *.apk
 *.unitypackage

@@ -64,9 +64,9 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal" + playerId);
-        float moveVertical = Input.GetAxis("Vertical" + playerId);
+        //float moveVertical = Input.GetAxis("Vertical" + playerId);
 
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, 0.0f);
         GetComponent<Rigidbody>().velocity = movement * speed * speedCof;
 
         GetComponent<Rigidbody>().position = new Vector3

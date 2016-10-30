@@ -6,16 +6,13 @@ using System;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject[] hazards;
     public GameObject[] powerUps;
     public GameObject playerPrefab;
+    public GameObject player2Prefab;
 
-    public Vector3 spawnValues;
-    public int hazardCount;
-    public float spawnWait;
+    public Level[] levels;
     public float startWait;
-    public float waveWait;
-
+    
 
     public Text gameOverText;
     public Text restartText;
@@ -53,8 +50,8 @@ public class GameController : MonoBehaviour
         multiplayerToggle.isOn = isMultiplayer;
         if (isMultiplayer)
         {
-            var player1 = Instantiate(playerPrefab, new Vector3(-2, 0, 0), Quaternion.identity) as GameObject;
-            var player2 = Instantiate(playerPrefab, new Vector3(2, 0, 0), Quaternion.identity) as GameObject;
+            var player1 = Instantiate(playerPrefab, new Vector3(-2, -1, 0), Quaternion.identity) as GameObject;
+            var player2 = Instantiate(player2Prefab, new Vector3(2, -1, 0), Quaternion.identity) as GameObject;
             p1Controller = player1.GetComponent<PlayerController>();
             p1Controller.gameController = this;
             p1Controller.playerId = 1;
@@ -71,7 +68,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            var player1 = Instantiate(playerPrefab, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+            var player1 = Instantiate(playerPrefab, new Vector3(0, -1, 0), Quaternion.identity) as GameObject;
             p1Controller = player1.GetComponent<PlayerController>();
             p1Controller.gameController = this;
             p1Controller.playerId = 1;
@@ -117,23 +114,11 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(startWait);
         while (!gameOver)
         {
-            for (int i = 0; i < hazardCount; i++)
+            foreach (Level level in levels)
             {
-                if (UnityEngine.Random.value < 0.10f)
-                {
-                    GameObject powerUp = powerUps[UnityEngine.Random.Range(0, powerUps.Length)];
-                    Instantiate(powerUp, new Vector3(UnityEngine.Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z), Quaternion.identity);
-                }
-                GameObject hazard = hazards[UnityEngine.Random.Range(0, hazards.Length)];
-                Vector3 spawnPosition = new Vector3(UnityEngine.Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
-                Quaternion spawnRotation = Quaternion.identity;
-                Instantiate(hazard, spawnPosition, spawnRotation);
-                yield return new WaitForSeconds(spawnWait);
+                yield return StartCoroutine(level.Spawn());
             }
-            spawnWait *= 0.8f;
-            hazardCount += 2;
-            yield return new WaitForSeconds(waveWait);
-            waveWait *= 0.8f;
+            YouWin();
         }
     }
 
@@ -182,9 +167,18 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverText.text = "Game Over!";
+        GameOver("Game Over!");
+    }
+    public void YouWin()
+    {
+        GameOver("You beat the game! Gratz. Now try and beat your score.");
+    }
+    
+    private void GameOver(string text)
+    {
+        gameOverText.text = text;
         gameOver = true;
-        StartCoroutine(ScaleTime(1,0,0.75f));
+        StartCoroutine(ScaleTime(1, 0, 0.75f));
     }
 
     public void ToggleMultiplayer()
