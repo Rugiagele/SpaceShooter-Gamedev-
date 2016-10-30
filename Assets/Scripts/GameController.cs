@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System;
+using Random = UnityEngine.Random;
 
 public class GameController : MonoBehaviour
 {
@@ -117,9 +118,18 @@ public class GameController : MonoBehaviour
             foreach (Level level in levels)
             {
                 yield return StartCoroutine(level.Spawn());
+                DropPowerup();
+                //powerUps[];
             }
             YouWin();
         }
+    }
+
+    public void DropPowerup()
+    {
+        int luckyNumber = Random.Range(0, powerUps.Length);
+        GameObject powerUp = powerUps[luckyNumber];
+        Instantiate(powerUp, powerUp.transform.position, Quaternion.identity);
     }
 
     public void UpdateLives(int lives, int playerId)
