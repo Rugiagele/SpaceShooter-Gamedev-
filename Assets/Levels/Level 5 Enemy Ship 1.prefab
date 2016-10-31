@@ -332,7 +332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
   shotSpawns:
-  - {fileID: 0}
+  - {fileID: 4000010926643968}
   fireRate: 2.1
   delay: 1.4
 --- !u!114 &114000011166402026
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
   shotSpawns:
-  - {fileID: 0}
+  - {fileID: 4000013232525034}
   fireRate: 2.1
   delay: 0.7
 --- !u!114 &114000013547773748
@@ -364,8 +364,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shot: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
   shotSpawns:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4000013232525034}
+  - {fileID: 4000010926643968}
   fireRate: 2.1
   delay: 0
 --- !u!135 &135000013048297710
