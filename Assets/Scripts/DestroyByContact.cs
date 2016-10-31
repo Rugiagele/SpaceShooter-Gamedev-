@@ -46,7 +46,10 @@ public class DestroyByContact : MonoBehaviour
             return;
         }
 
-        gameController.AddScore(scoreValue);
+		if(Random.value<0.5)
+			gameController.DropPowerupOnKill (gameObject.transform.position);
+        
+		gameController.AddScore(scoreValue);
         Destroy(other.gameObject);
         Destroy(gameObject);
     }

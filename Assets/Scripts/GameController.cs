@@ -118,7 +118,7 @@ public class GameController : MonoBehaviour
             foreach (Level level in levels)
             {
                 yield return StartCoroutine(level.Spawn());
-                DropPowerup();
+                DropPowerupRandom();
                 //powerUps[];
             }
 			yield return new WaitForSeconds(4);
@@ -126,12 +126,20 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void DropPowerup()
+    public void DropPowerupRandom()
     {
+		Vector3 spawnPosition = new Vector3(UnityEngine.Random.Range(-7, 7),1, 10);
         int luckyNumber = Random.Range(0, powerUps.Length);
         GameObject powerUp = powerUps[luckyNumber];
-        Instantiate(powerUp, powerUp.transform.position, Quaternion.identity);
+		Instantiate(powerUp, spawnPosition, Quaternion.identity);
     }
+	public void DropPowerupOnKill(Vector3 position)
+	{
+		Vector3 spawnPosition = position;
+		int luckyNumber = Random.Range(0, powerUps.Length);
+		GameObject powerUp = powerUps[luckyNumber];
+		Instantiate(powerUp, spawnPosition, Quaternion.identity);
+	}
 
     public void UpdateLives(int lives, int playerId)
     {
