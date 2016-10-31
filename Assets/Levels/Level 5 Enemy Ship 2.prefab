@@ -35,13 +35,13 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013627612712}
   - 54: {fileID: 54000013440100064}
-  - 135: {fileID: 135000012772718214}
   - 114: {fileID: 114000011901715742}
   - 114: {fileID: 114000011854925566}
   - 114: {fileID: 114000011150936998}
   - 82: {fileID: 82000013127319454}
   - 114: {fileID: 114000014177804454}
   - 114: {fileID: 114000012906285930}
+  - 65: {fileID: 65000012172470120}
   m_Layer: 0
   m_Name: Level 5 Enemy Ship 2
   m_TagString: Enemy
@@ -218,6 +218,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65000012172470120
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010715248290}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5, z: 1.5}
+  m_Center: {x: 0, y: 0, z: -0.6}
 --- !u!82 &82000013127319454
 AudioSource:
   m_ObjectHideFlags: 1
@@ -368,18 +380,6 @@ MonoBehaviour:
   - {fileID: 4000010590947694}
   fireRate: 2.1
   delay: 1.4
---- !u!135 &135000012772718214
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010715248290}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.85
-  m_Center: {x: 0, y: 0, z: -0.3}
 --- !u!198 &198000012035421664
 ParticleSystem:
   m_ObjectHideFlags: 1
