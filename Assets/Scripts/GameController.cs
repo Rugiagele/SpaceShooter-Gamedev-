@@ -121,6 +121,7 @@ public class GameController : MonoBehaviour
                 DropPowerup();
                 //powerUps[];
             }
+			yield return new WaitForSeconds(4);
             YouWin();
         }
     }
