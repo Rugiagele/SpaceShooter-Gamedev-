@@ -8,6 +8,6 @@ public class Mover : MonoBehaviour
 
 	void Start ()
 	{
-		GetComponent<Rigidbody>().velocity = transform.forward * speed * (randomizeSpeed?(Random.value/2+0.75f):1);
+		GetComponent<Rigidbody2D>().velocity = transform.up * speed * (randomizeSpeed?(Random.value/2+0.75f):1);
 	}
 }

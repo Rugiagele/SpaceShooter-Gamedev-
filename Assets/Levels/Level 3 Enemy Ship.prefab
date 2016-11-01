@@ -68,13 +68,13 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010434153408}
-  - 54: {fileID: 54000010787656160}
   - 114: {fileID: 114000012355595698}
   - 114: {fileID: 114000013932056948}
   - 114: {fileID: 114000012978731142}
   - 114: {fileID: 114000010239731540}
   - 82: {fileID: 82000010743490558}
-  - 65: {fileID: 65000012390670266}
+  - 50: {fileID: 50000013074013580}
+  - 61: {fileID: 61000010459627370}
   m_Layer: 0
   m_Name: Level 3 Enemy Ship
   m_TagString: Enemy
@@ -89,7 +89,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013535412058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: 0, z: 16}
+  m_LocalPosition: {x: -6, y: 16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -117,10 +117,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012527790040}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: 0, y: 0, z: -0.5}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_Children: []
   m_Father: {fileID: 4000010434153408}
   m_RootOrder: 1
@@ -131,7 +131,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011805140172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.18}
+  m_LocalPosition: {x: 0, y: 0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -173,33 +173,37 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010451649056}
   m_Mesh: {fileID: 4300000, guid: 1c968a27b308eeb4ab2267c367894a24, type: 3}
---- !u!54 &54000010787656160
-Rigidbody:
+--- !u!50 &50000013074013580
+Rigidbody2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013535412058}
-  serializedVersion: 2
+  m_UseAutoMass: 0
   m_Mass: 1
-  m_Drag: 0
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_GravityScale: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!65 &65000012390670266
-BoxCollider:
+  m_Constraints: 0
+--- !u!61 &61000010459627370
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013535412058}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 0.8}
-  m_Center: {x: 0, y: 0, z: -0.1}
+  m_Size: {x: 1, y: 1}
 --- !u!82 &82000010743490558
 AudioSource:
   m_ObjectHideFlags: 1
@@ -383,7 +387,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: 1946270262
+  randomSeed: -1670386374
   InitialModule:
     serializedVersion: 2
     enabled: 1

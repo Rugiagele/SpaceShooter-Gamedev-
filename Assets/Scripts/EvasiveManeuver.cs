@@ -40,7 +40,7 @@ public class EvasiveManeuver : MonoBehaviour
 		(
 			Mathf.Clamp(GetComponent<Rigidbody>().position.x, boundary.xMin, boundary.xMax), 
 			0.0f, 
-			Mathf.Clamp(GetComponent<Rigidbody>().position.z, boundary.zMin, boundary.zMax)
+			Mathf.Clamp(GetComponent<Rigidbody>().position.z, boundary.yMin, boundary.yMax)
 		);
 		
 		GetComponent<Rigidbody>().rotation = Quaternion.Euler (0, 0, GetComponent<Rigidbody>().velocity.x * -tilt);

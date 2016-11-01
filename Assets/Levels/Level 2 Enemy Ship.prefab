@@ -68,12 +68,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010644439108}
-  - 54: {fileID: 54000011900903160}
   - 114: {fileID: 114000010680853726}
-  - 114: {fileID: 114000011663422462}
   - 114: {fileID: 114000011144410434}
   - 82: {fileID: 82000011027818366}
-  - 65: {fileID: 65000010002305798}
+  - 50: {fileID: 50000012117138744}
+  - 61: {fileID: 61000012322207668}
   m_Layer: 0
   m_Name: Level 2 Enemy Ship
   m_TagString: Enemy
@@ -88,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013490176402}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 16}
+  m_LocalPosition: {x: 0, y: 16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -104,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011231960858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.18}
+  m_LocalPosition: {x: 0, y: 0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -129,10 +128,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010106179536}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
-  m_LocalPosition: {x: 0, y: 0, z: -0.5}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000010644439108}
   m_RootOrder: 0
@@ -172,33 +171,37 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011707459076}
   m_Mesh: {fileID: 4300000, guid: 1c968a27b308eeb4ab2267c367894a24, type: 3}
---- !u!54 &54000011900903160
-Rigidbody:
+--- !u!50 &50000012117138744
+Rigidbody2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013490176402}
-  serializedVersion: 2
+  m_UseAutoMass: 0
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!65 &65000010002305798
-BoxCollider:
+  m_Constraints: 0
+--- !u!61 &61000012322207668
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013490176402}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 0.8}
-  m_Center: {x: 0, y: 0, z: -0.1}
+  m_Size: {x: 1, y: 1}
 --- !u!82 &82000011027818366
 AudioSource:
   m_ObjectHideFlags: 1
@@ -308,22 +311,6 @@ MonoBehaviour:
   - {fileID: 1000013424808828, guid: 0e2af8728add68d47b63376d727340b3, type: 2}
   - {fileID: 1000011235182668, guid: af35f4cc44b46b442b4841832b85be63, type: 2}
   - {fileID: 1000013424808828, guid: 0e2af8728add68d47b63376d727340b3, type: 2}
---- !u!114 &114000011663422462
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013490176402}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 365dd2da98dd9431b8c5d7406c200eeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shot: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
-  shotSpawns:
-  - {fileID: 0}
-  fireRate: 1.5
-  delay: 0.5
 --- !u!198 &198000010582929792
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -374,7 +361,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: 1469567163
+  randomSeed: -688005898
   InitialModule:
     serializedVersion: 2
     enabled: 1
