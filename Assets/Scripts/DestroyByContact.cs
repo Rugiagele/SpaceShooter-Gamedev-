@@ -23,7 +23,7 @@ public class DestroyByContact : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Boundary" || other.tag == "Enemy")
+        if (other.tag == "Boundary" || other.tag == "Enemy" || other.tag == "Powerup")
         {
             return;
         }
@@ -42,15 +42,19 @@ public class DestroyByContact : MonoBehaviour
         {
             var playerController = other.GetComponent<PlayerController>();
             playerController.ChangeLives(-1);
+            gameController.AddScore(scoreValue);
             Destroy(gameObject);
             return;
         }
 
-		if(Random.value<0.5)
-			gameController.DropPowerupOnKill (gameObject.transform.position);
-        
-		gameController.AddScore(scoreValue);
-        Destroy(other.gameObject);
-        Destroy(gameObject);
+        if (other.tag == "Bolt")
+        {
+            if (Random.value < 0.5)
+                gameController.DropPowerupOnKill(gameObject.transform.position);
+
+            gameController.AddScore(scoreValue);
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
     }
 }
