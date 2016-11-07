@@ -104,10 +104,6 @@ public class GameController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-        if (gameOver && Time.timeScale == 0)
-        {
-            HighScoreUpdate();
-        }
     }
 
     IEnumerator SpawnWaves()
@@ -198,6 +194,7 @@ public class GameController : MonoBehaviour
         gameOverText.text = text;
         gameOver = true;
         StartCoroutine(ScaleTime(1, 0, 0.75f));
+		HighScoreUpdate();
     }
 
     public void ToggleMultiplayer()
