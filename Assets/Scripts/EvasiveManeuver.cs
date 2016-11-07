@@ -16,16 +16,19 @@ public class EvasiveManeuver : MonoBehaviour
 
     void Start ()
 	{
-		currentSpeed = GetComponent<Rigidbody>().velocity.z;
+		currentSpeed = GetComponent<Rigidbody2D>().velocity.y;
 		StartCoroutine(Evade());
 	}
 	
 	IEnumerator Evade ()
 	{
+		GameObject[] playerObjects = GameObject.FindGameObjectsWithTag("Player");	//neefektyvu, tiketina
+
 		yield return new WaitForSeconds (Random.Range (startWait.x, startWait.y));
 		while (true)
 		{
-			targetManeuver = Random.Range (1, dodge) * -Mathf.Sign (transform.position.x);
+			float kryptis = playerObjects[0].transform.position.x;
+			targetManeuver = kryptis;
 			yield return new WaitForSeconds (Random.Range (maneuverTime.x, maneuverTime.y));
 			targetManeuver = 0;
 			yield return new WaitForSeconds (Random.Range (maneuverWait.x, maneuverWait.y));
@@ -34,15 +37,14 @@ public class EvasiveManeuver : MonoBehaviour
 	
 	void FixedUpdate ()
 	{
-		float newManeuver = Mathf.MoveTowards (GetComponent<Rigidbody>().velocity.x, targetManeuver, smoothing * Time.deltaTime);
-		GetComponent<Rigidbody>().velocity = new Vector3 (newManeuver, 0.0f, currentSpeed);
-		GetComponent<Rigidbody>().position = new Vector3
+		float newManeuver = Mathf.MoveTowards (GetComponent<Rigidbody2D>().velocity.x, targetManeuver, smoothing * Time.deltaTime);
+		GetComponent<Rigidbody2D>().velocity = new Vector2 (newManeuver, currentSpeed);
+		GetComponent<Rigidbody2D>().position = new Vector2
 		(
-			Mathf.Clamp(GetComponent<Rigidbody>().position.x, boundary.xMin, boundary.xMax), 
-			0.0f, 
-			Mathf.Clamp(GetComponent<Rigidbody>().position.z, boundary.yMin, boundary.yMax)
+			Mathf.Clamp(GetComponent<Rigidbody2D>().position.x, boundary.xMin, boundary.xMax), 
+			Mathf.Clamp(GetComponent<Rigidbody2D>().position.y, boundary.yMin, boundary.yMax)
 		);
 		
-		GetComponent<Rigidbody>().rotation = Quaternion.Euler (0, 0, GetComponent<Rigidbody>().velocity.x * -tilt);
+	//	GetComponent<Rigidbody2D>().Rotate(GetComponent<Rigidbody2D>().velocity.x * -tilt);
 	}
 }
