@@ -9,14 +9,16 @@ public class Level : MonoBehaviour
     public GameObject[] enemies;
     public int spawnWaves;
     public float delayBetweenSpawn;
-    
+    public GameController gameController;
+
     public IEnumerator Spawn()
     {
             
         for(int i = 0; i < spawnWaves; i++) { 
             foreach (var enemy in enemies)
             {
-                Instantiate(enemy, enemy.transform.position, Quaternion.identity);
+                var e = Instantiate(enemy, enemy.transform.position, Quaternion.identity) as GameObject;
+                e.GetComponent<ShipBase>().Initialize(gameController);
             }
             yield return new WaitForSeconds(delayBetweenSpawn);
         }
