@@ -33,17 +33,18 @@ public class PlayerController : ShipBase
         GetComponent<PlayerWeaponController>()._playerId = _playerId;
     }
 
+	public void Initialize(GameController gameController, int playerId, Color playerColor) //call this method after player gameobject initialization
+	{
+		Initialize(gameController);
+		_playerColor = playerColor;
+		_playerId = playerId;
+
+		GetComponent<MeshRenderer>().materials[0].color = _playerColor;
+		_gameController.UpdateLives(_playerId);
+	}
+
     void Update()
     {
-        if (speedBuffTime > 0)
-        {
-            speedBuffTime -= Time.deltaTime;
-            if (speedBuffTime <= 0)
-            {
-                _speedCof = 1;
-                speedBuffTime = 0;
-            }
-        }
         if (_isInvulnerable)
         {
             invulneravilityTime -= Time.deltaTime;
@@ -73,21 +74,17 @@ public class PlayerController : ShipBase
         transform.rotation = Quaternion.Euler(0.0f, _rigidbody2d.velocity.x * -tilt, 0.0f);
     }
 
-    public void AddSpeed(float speedTime, float speedCof)
+    public void AddSpeed(float speedCof)
     {
-        speedBuffTime += speedTime;
-        _speedCof = speedCof;
+		_speedCof = Mathf.Clamp (_speedCof+speedCof, .5f, 3f);
     }
 
-    public void Initialize(GameController gameController, int playerId, Color playerColor) //call this method after player gameobject initialization
-    {
-        Initialize(gameController);
-        _playerColor = playerColor;
-        _playerId = playerId;
-
-        GetComponent<MeshRenderer>().materials[0].color = _playerColor;
-        _gameController.UpdateLives(_playerId);
-    }
+	public void AddInvulnerability(float time)
+	{
+		_isInvulnerable = true;
+		invulneravilityTime += time;
+		GetComponent<MeshRenderer>().materials[0].color = _playerColor * new Color(.4f, .7f, .4f);
+	}
 
     public override void ChangeHp(int changeAmount, int playerId = 0)
     {

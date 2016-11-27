@@ -6,11 +6,6 @@ public class PlayerRocket : MissileBase
     public GameObject explosion;
     public float explosionRadius;
 
-    protected override void Mover()
-    {
-        _rigidbody2d.velocity = transform.up * missileSpeed;
-    }
-
     public override void Destroy()
     {
         Instantiate(explosion, transform.position, transform.rotation);
@@ -19,8 +14,14 @@ public class PlayerRocket : MissileBase
         {
             if (hit.gameObject.tag == "Enemy")
             {
-                Debug.Log("Enemy");
-                hit.GetComponent<ShipBase>().ChangeHp(Mathf.RoundToInt(-missileDamage * Mathf.Sqrt(Mathf.Pow(transform.position.x + hit.transform.position.x, 2) + Mathf.Pow(transform.position.y + hit.transform.position.y, 2)) / explosionRadius), damageSource);
+				hit.GetComponent<ShipBase>().ChangeHp(
+					Mathf.RoundToInt(
+						-missileDamage * 
+						(Mathf.Sqrt(
+							Mathf.Pow(transform.position.x + hit.transform.position.x, 2) + 
+							Mathf.Pow(transform.position.y + hit.transform.position.y, 2)) 
+							/ explosionRadius)), 
+					damageSource);
             }
         }
         Destroy(gameObject);

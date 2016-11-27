@@ -134,9 +134,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - {fileID: 0}
+  - {fileID: 2130472163}
+  - {fileID: 978891531}
   gameController: {fileID: 1904691131}
   currentLevelId: 0
+  levelInProgress: 0
 --- !u!1 &106113510
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,7 +755,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &978891530
 Transform:
   m_ObjectHideFlags: 0
@@ -778,8 +780,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9053c063ca3b1c408b87fbd0bf749ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelFinished: 0
   spawningEnded: 0
   _levelManager: {fileID: 17601374}
+  gameController: {fileID: 1904691131}
   enemyShip: {fileID: 1000011417983338, guid: f432c370ed1dfed449c654f677a06402, type: 2}
   shipCount: 8
   spawnPoints:
@@ -986,7 +990,7 @@ Transform:
   m_GameObject: {fileID: 1112871355}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5, z: 0}
-  m_LocalScale: {x: 19, y: 20, z: 1}
+  m_LocalScale: {x: 20, y: 20, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2141,8 +2145,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUps:
   - {fileID: 1000013134232704, guid: e3c04ccfda0c72841b03b832ae2fe51e, type: 2}
-  - {fileID: 1000012845364806, guid: 437ffab25f5b4d34f9b77b4822579771, type: 2}
+  - {fileID: 1000012845364806, guid: 3f9b6ca5b1673654c824af451f5baa79, type: 2}
   - {fileID: 1000010719199420, guid: 16e787a3a9a8e3c42aba6528fde919ef, type: 2}
+  - {fileID: 1000010719199420, guid: 1b61d0613a0882c498a7db8327c9308b, type: 2}
   playerPrefab: {fileID: 1000014117707230, guid: ef5c5935d2060c241b2761b8b0d16191,
     type: 2}
   player2Prefab: {fileID: 1000014117707230, guid: ef5c5935d2060c241b2761b8b0d16191,
@@ -2383,7 +2388,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2130472162
 Transform:
   m_ObjectHideFlags: 0
@@ -2408,8 +2413,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9053c063ca3b1c408b87fbd0bf749ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelFinished: 0
   spawningEnded: 0
   _levelManager: {fileID: 17601374}
+  gameController: {fileID: 1904691131}
   enemyShip: {fileID: 1000011417983338, guid: f432c370ed1dfed449c654f677a06402, type: 2}
   shipCount: 5
   spawnPoints:

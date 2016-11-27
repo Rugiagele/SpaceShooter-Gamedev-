@@ -9,7 +9,7 @@ public abstract class ShipBase : MonoBehaviour
     public int damageOnContact = 100;
     public GameObject explosion;
     protected int _shipHp;
-    protected GameController _gameController;
+	public GameController _gameController;
     protected Rigidbody2D _rigidbody2d;
 
     // Use this for initialization

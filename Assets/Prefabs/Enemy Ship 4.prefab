@@ -383,8 +383,8 @@ MonoBehaviour:
   boundary:
     xMin: -6
     xMax: 6
-    zMin: -20
-    zMax: 20
+    yMin: 0
+    yMax: 0
   tilt: 0
   dodge: 5
   smoothing: 7.5

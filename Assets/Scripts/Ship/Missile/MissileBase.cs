@@ -11,7 +11,10 @@ public abstract class MissileBase : MonoBehaviour {
         _rigidbody2d = GetComponent<Rigidbody2D>();
         Mover();
     }
-    protected abstract void Mover();
+	protected virtual void Mover()
+	{
+		_rigidbody2d.velocity = transform.up * missileSpeed;
+	}
     public virtual void Destroy()
     {
         Destroy(gameObject);
