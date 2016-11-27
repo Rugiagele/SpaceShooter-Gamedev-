@@ -2148,6 +2148,11 @@ MonoBehaviour:
   - {fileID: 1000012845364806, guid: 3f9b6ca5b1673654c824af451f5baa79, type: 2}
   - {fileID: 1000010719199420, guid: 16e787a3a9a8e3c42aba6528fde919ef, type: 2}
   - {fileID: 1000010719199420, guid: 1b61d0613a0882c498a7db8327c9308b, type: 2}
+  - {fileID: 1000012845364806, guid: f5726b607cbac514d9422129f8ddbb98, type: 2}
+  - {fileID: 1000012845364806, guid: 187209cef18d0a14eb4e489cffd6ea38, type: 2}
+  - {fileID: 1000012845364806, guid: 8075ea4578ea28740b2320e2cbcef6b0, type: 2}
+  - {fileID: 1000012845364806, guid: fcd20ac9ca65b814ba903397c6da5722, type: 2}
+  - {fileID: 1000012845364806, guid: 5611941cff759374786c8e6317c4186c, type: 2}
   playerPrefab: {fileID: 1000014117707230, guid: ef5c5935d2060c241b2761b8b0d16191,
     type: 2}
   player2Prefab: {fileID: 1000014117707230, guid: ef5c5935d2060c241b2761b8b0d16191,
