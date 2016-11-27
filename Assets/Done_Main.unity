@@ -974,7 +974,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1112871355}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -2423,9 +2423,7 @@ MonoBehaviour:
   _levelManager: {fileID: 17601374}
   gameController: {fileID: 1904691131}
   enemyShip: {fileID: 1000011417983338, guid: 98ac15a8f7431de41af6547fccd022d3, type: 2}
-  shipCount: 5
+  shipCount: 2
   spawnPoints:
   - {x: -6, y: 16, z: 0}
-  - {x: 0, y: 16, z: 0}
-  - {x: 6, y: 16, z: 0}
   delayBetweenSpawns: 2

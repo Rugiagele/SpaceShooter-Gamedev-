@@ -24,6 +24,7 @@ GameObject:
   - 50: {fileID: 50000014135000506}
   - 114: {fileID: 114000010188081946}
   - 114: {fileID: 114000010221570244}
+  - 114: {fileID: 114000014013860266}
   m_Layer: 0
   m_Name: Level 1 Enemy Ship 1
   m_TagString: Enemy
@@ -86,10 +87,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011421259434}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_Children: []
   m_Father: {fileID: 4000012392697002}
   m_RootOrder: 0
@@ -307,26 +308,50 @@ MonoBehaviour:
   trajectory:
   - destination: {x: 0, y: 10}
     time: 1
-    toggleWeapon: 0
+    toggleWeapon: 1
     isMoving: 1
   - destination: {x: 0, y: 0}
     time: 0.3
     toggleWeapon: 0
     isMoving: 0
-  - destination: {x: -6, y: 10}
+  - destination: {x: -6, y: 12}
     time: 1
-    toggleWeapon: 0
+    toggleWeapon: 1
     isMoving: 1
-  - destination: {x: 6, y: 10}
+  - destination: {x: 6, y: 4}
     time: 2
+    toggleWeapon: 1
+    isMoving: 1
+  - destination: {x: 0, y: -6}
+    time: 4
     toggleWeapon: 0
     isMoving: 1
-  - destination: {x: 0, y: 0}
-    time: 0.3
-    toggleWeapon: 0
-    isMoving: 0
-  repeat: 1
+  repeat: 0
   repeatFrom: 0
+--- !u!114 &114000014013860266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011417983338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 365dd2da98dd9431b8c5d7406c200eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoCount: 0
+  missileDamage: 10
+  missileSpeed: 10
+  fireRate: 2
+  shotSpawns:
+  - {fileID: 4000010944071866}
+  shotGameObject: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
+  weaponType: 0
+  playerWeaponController: {fileID: 0}
+  _playerId: 0
+  shotCount: 1
+  timeBetweenShots: 0
+  delay: 0
 --- !u!198 &198000011474947046
 ParticleSystem:
   m_ObjectHideFlags: 1

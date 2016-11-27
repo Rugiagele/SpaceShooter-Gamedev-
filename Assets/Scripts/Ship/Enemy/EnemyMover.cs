@@ -29,7 +29,7 @@ public class EnemyMover : MonoBehaviour
 
     void Update()
     {
-        if (step >= trajectory.Length)
+        if (step > trajectory.Length)
         {
             if (repeat)
             {
