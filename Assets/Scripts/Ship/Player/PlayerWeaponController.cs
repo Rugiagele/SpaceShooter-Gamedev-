@@ -14,7 +14,7 @@ public class PlayerWeaponController : MonoBehaviour
         {
             playerWeapon.playerWeaponController = this;
             playerWeapon._playerId = _playerId;
-            if(playerWeapon.weaponType == WeaponBase.WeaponType.basic)
+            if(playerWeapon.weaponType == WeaponBase.WeaponType.shotgun)
             {
                 _activeWeapon = playerWeapon;
                 _activeWeapon.ammoCount = 50;

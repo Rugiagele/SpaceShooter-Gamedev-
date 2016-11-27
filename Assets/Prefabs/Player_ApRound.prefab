@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 50: {fileID: 50000010989463962}
   - 61: {fileID: 61000010945323374}
-  - 114: {fileID: 114000013146831364}
+  - 114: {fileID: 114000012685924620}
   m_Layer: 0
   m_Name: Player_ApRound
   m_TagString: Bolt
@@ -135,7 +135,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
---- !u!114 &114000013146831364
+--- !u!114 &114000012685924620
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -143,12 +143,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 210380e19ffdc7f43a293ac8acfde8d6, type: 3}
+  m_Script: {fileID: 11500000, guid: a8583c03ac281f642bcf366439af6fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missileDamage: 20
-  missileSpeed: 20
+  missileDamage: 0
+  missileSpeed: 0
   damageSource: 0
+  lives: 3
 --- !u!198 &198000011577506238
 ParticleSystem:
   m_ObjectHideFlags: 1

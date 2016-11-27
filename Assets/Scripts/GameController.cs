@@ -10,11 +10,7 @@ public class GameController : MonoBehaviour
     public GameObject[] powerUps;
     public GameObject playerPrefab;
     public GameObject player2Prefab;
-
-    public Level[] levels;
-    public float startWait;
-
-
+    
     public Text gameOverText;
     public Text restartText;
     public Text scoreText;
@@ -76,7 +72,6 @@ public class GameController : MonoBehaviour
         gameOverText.text = "";
         score = 0;
         UpdateScore();
-        StartCoroutine(SpawnWaves());
         if (isMultiplayer)
         {
             highScore = PlayerPrefs.GetInt("HighScoreMulti", 0);
@@ -98,22 +93,6 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-    }
-
-    IEnumerator SpawnWaves()
-    {
-        yield return new WaitForSeconds(startWait);
-        while (!gameOver)
-        {
-            foreach (Level level in levels)
-            {
-                yield return StartCoroutine(level.Spawn());
-                DropPowerupRandom();
-                //powerUps[];
-            }
-            yield return new WaitForSeconds(4);
-            YouWin();
         }
     }
 
