@@ -45,7 +45,8 @@ public class GameController : MonoBehaviour
         }
 
         multiplayerToggle.isOn = isMultiplayer;
-        if (isMultiplayer)
+        //if (isMultiplayer)
+        if(ApplicationModel.TwoPlayers)
         {
             var player1 = Instantiate(playerPrefab, new Vector3(-2, -1, 0), Quaternion.identity) as GameObject;
             var player2 = Instantiate(player2Prefab, new Vector3(2, -1, 0), Quaternion.identity) as GameObject;
