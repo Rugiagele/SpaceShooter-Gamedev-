@@ -13,28 +13,41 @@ public class EvasiveManeuver : MonoBehaviour
 
 	private float currentSpeed;
 	private float targetManeuver;
+	private GameController gc;
 
     void Start ()
 	{
 		currentSpeed = GetComponent<Rigidbody2D>().velocity.y;
 		StartCoroutine(Evade());
+		gc = GetComponent<ShipBase>()._gameController;
 	}
 	
 	IEnumerator Evade ()
 	{
-		GameObject[] playerObjects = GameObject.FindGameObjectsWithTag("Player");	//neefektyvu, tiketina
-
 		yield return new WaitForSeconds (Random.Range (startWait.x, startWait.y));
 		while (true)
 		{
-			float kryptis = playerObjects[0].transform.position.x;
-			targetManeuver = kryptis;
+			float direction = getDirection();
+			targetManeuver = direction;
 			yield return new WaitForSeconds (Random.Range (maneuverTime.x, maneuverTime.y));
 			targetManeuver = 0;
 			yield return new WaitForSeconds (Random.Range (maneuverWait.x, maneuverWait.y));
 		}
 	}
-	
+
+	float getDirection()
+	{
+		if (gc.isMultiplayer) {
+			if (Random.value < .5f) {
+				return gc.p1Controller.transform.position.x;
+			} else {
+				return gc.p2Controller.transform.position.x;
+			}
+		} else {
+			return gc.p1Controller.transform.position.x;
+		}
+	}
+
 	void FixedUpdate ()
 	{
 		float newManeuver = Mathf.MoveTowards (GetComponent<Rigidbody2D>().velocity.x, targetManeuver, smoothing * Time.deltaTime);
