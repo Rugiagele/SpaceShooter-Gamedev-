@@ -44,7 +44,6 @@ public class EnemyHpController : ShipBase
         _shipHp = _shipHp > maxShipHp ? maxShipHp : _shipHp;
         if (_shipHp <= 0)
         {
-            Debug.Log("WTF");
             _shipHp = 0;
             OnShipDestroy();
         }
