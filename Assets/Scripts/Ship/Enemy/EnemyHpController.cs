@@ -25,7 +25,7 @@ public class EnemyHpController : ShipBase
         {
             var missileBase = other.gameObject.GetComponent<MissileBase>();
             ChangeHp(-missileBase.missileDamage, missileBase.damageSource);
-            Destroy(other.gameObject);
+            other.GetComponent<MissileBase>().Destroy();
             return;
         }
     }

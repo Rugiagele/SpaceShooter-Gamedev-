@@ -12,4 +12,8 @@ public abstract class MissileBase : MonoBehaviour {
         Mover();
     }
     protected abstract void Mover();
+    public virtual void Destroy()
+    {
+        Destroy(gameObject);
+    }
 }

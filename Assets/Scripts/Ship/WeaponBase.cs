@@ -9,7 +9,7 @@ public abstract class WeaponBase : MonoBehaviour
     public float fireRate;
     public Transform[] shotSpawns;
     public GameObject shotGameObject;
-    public enum WeaponType { basic, automatic, shotgun, rocket, penetrating };
+    public enum WeaponType { basic, automatic, shotgun, rocket, piercing };
     public WeaponType weaponType;
     public PlayerWeaponController playerWeaponController;
     protected float _fireRateCof = 1;

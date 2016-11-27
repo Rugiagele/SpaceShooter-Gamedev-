@@ -125,6 +125,7 @@ public class PlayerController : ShipBase
         if (other.tag == "EnemyBolt")
         {
             ChangeHp(-other.gameObject.GetComponent<MissileBase>().missileDamage);
+            other.GetComponent<MissileBase>().Destroy();
         }
     }
 }
