@@ -15,18 +15,9 @@ public class PlayerController : ShipBase
     public float tilt;
     public int lives;
     public Boundary boundary;
-
-
-    public GameObject shot;
-    public int missileDamage = 20;
-    public float missileSpeed = 20;
-    public Transform shotSpawn;
     public float fireRate;
     public GameObject playerExplosion;
-
-    private float _nextFire;
     private float _speedCof = 1;
-    private float _fireRateCof = 1;
 
     private bool _isInvulnerable;
     public float invulneravilityTime;
@@ -37,26 +28,19 @@ public class PlayerController : ShipBase
 
     public int GetPlayerId() { return _playerId; }
 
-    void Update() //move weapon logic to another sript. probably speed buffs/invulnerability - in my opinion should stay here
+    void Start()
     {
-        if (Input.GetButton("Fire" + _playerId) && Time.time > _nextFire)
-        {
-            _nextFire = Time.time + fireRate * _fireRateCof;
-            var shotGo = Instantiate(shot, shotSpawn.position, shotSpawn.rotation) as GameObject;
-            var missileBase = shotGo.GetComponent<MissileBase>();
-            missileBase.missileDamage = missileDamage;
-            missileBase.missileSpeed = missileSpeed;
-            missileBase.damageSource = _playerId;
+        GetComponent<PlayerWeaponController>()._playerId = _playerId;
+    }
 
-            GetComponent<AudioSource>().Play();
-        }
+    void Update()
+    {
         if (speedBuffTime > 0)
         {
             speedBuffTime -= Time.deltaTime;
             if (speedBuffTime <= 0)
             {
                 _speedCof = 1;
-                _fireRateCof = 1;
                 speedBuffTime = 0;
             }
         }
@@ -93,7 +77,6 @@ public class PlayerController : ShipBase
     {
         speedBuffTime += speedTime;
         _speedCof = speedCof;
-        _fireRateCof = 0.5f;
     }
 
     public void Initialize(GameController gameController, int playerId, Color playerColor) //call this method after player gameobject initialization
