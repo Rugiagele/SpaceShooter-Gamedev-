@@ -905,8 +905,8 @@ MonoBehaviour:
   tilt: 3
   lives: 20
   boundary:
-    xMin: -7
-    xMax: 7
+    xMin: -9
+    xMax: 9
     yMin: -4
     yMax: 14
   fireRate: 0.25

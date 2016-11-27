@@ -12,7 +12,7 @@ GameObject:
   - 61: {fileID: 61000010945323374}
   - 114: {fileID: 114000013146831364}
   m_Layer: 0
-  m_Name: Player_Bolt
+  m_Name: Player_ApRound
   m_TagString: Bolt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
