@@ -317,6 +317,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 054c19cd9824a4257a98a59874c988f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxShipHp: 100
+  damageOnContact: 5000
+  explosion: {fileID: 100008, guid: 3455fe69f7ddc4604b95bf9b0a1e88d7, type: 2}
   speed: 10
   speedBuffTime: 0
   tilt: 3
@@ -326,15 +329,13 @@ MonoBehaviour:
     xMax: 7
     yMin: -4
     yMax: 14
-  playerId: 1
   shot: {fileID: 100000, guid: f4ec271e525e14ca9927a07e6a2e153d, type: 2}
+  missileDamage: 20
+  missileSpeed: 20
   shotSpawn: {fileID: 4000010663741110}
   fireRate: 0.25
-  gameController: {fileID: 0}
-  isInvulnerable: 0
-  invulneravilityTime: 0
-  playerColor: {r: 0, g: 0, b: 0, a: 0}
   playerExplosion: {fileID: 100008, guid: 3455fe69f7ddc4604b95bf9b0a1e88d7, type: 2}
+  invulneravilityTime: 0
 --- !u!198 &198000010994574832
 ParticleSystem:
   m_ObjectHideFlags: 1

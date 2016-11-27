@@ -23,7 +23,7 @@ public class BonusPoints : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            gameController.AddScore(scoreValue);
+            gameController.AddScore(scoreValue, 1); //TODO: pass player Id
             Destroy(gameObject);
         }
     }

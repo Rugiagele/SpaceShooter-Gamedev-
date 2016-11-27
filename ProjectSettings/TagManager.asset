@@ -8,6 +8,7 @@ TagManager:
   - Boundary
   - Bolt
   - Powerup
+  - EnemyBolt
   layers:
   - Default
   - TransparentFX

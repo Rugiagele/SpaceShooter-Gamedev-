@@ -41,8 +41,8 @@ public class DestroyByContact : MonoBehaviour
         if (other.tag == "Player")
         {
             var playerController = other.GetComponent<PlayerController>();
-            playerController.ChangeLives(-1);
-            gameController.AddScore(scoreValue);
+            playerController.ChangeHp(-1);
+            gameController.AddScore(scoreValue, 1); //TODO: pass player Id
             Destroy(gameObject);
             return;
         }
@@ -52,7 +52,7 @@ public class DestroyByContact : MonoBehaviour
             if (Random.value < 0.5)
                 gameController.DropPowerupOnKill(gameObject.transform.position);
 
-            gameController.AddScore(scoreValue);
+            gameController.AddScore(scoreValue, 1); //TODO: pass player Id
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

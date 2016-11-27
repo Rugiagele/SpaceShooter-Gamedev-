@@ -8,7 +8,7 @@ public class GiveLives : MonoBehaviour
         if (other.tag == "Player")
         {
             var playerController = other.GetComponent<PlayerController>();
-            playerController.ChangeLives(1);
+            playerController.ChangeHp(1);
             Destroy(gameObject);
         }
     }

@@ -510,6 +510,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1000013535412058, guid: 9d0f836800688f64c8f4da16c06dd44a,
         type: 2}
+    - target: {fileID: 114000010307489930, guid: 1a931bd5372c074429ab15f62cc4087e,
+        type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 1904691131}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a931bd5372c074429ab15f62cc4087e, type: 2}
   m_IsPrefabParent: 0
@@ -580,6 +585,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1000011417983338, guid: f432c370ed1dfed449c654f677a06402,
         type: 2}
+    - target: {fileID: 114000011159205278, guid: 2a9712e1536e44d4992f46007c5651f4,
+        type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 1904691131}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a9712e1536e44d4992f46007c5651f4, type: 2}
   m_IsPrefabParent: 0
@@ -843,6 +853,7 @@ MonoBehaviour:
   - {fileID: 1000013490176402, guid: 03d6dadad17b7ba418531318a904bc6c, type: 2}
   spawnWaves: 8
   delayBetweenSpawn: 1
+  gameController: {fileID: 1904691131}
 --- !u!1 &1112871355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,6 +1170,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1000013490176402, guid: 03d6dadad17b7ba418531318a904bc6c,
         type: 2}
+    - target: {fileID: 114000013213778742, guid: 2bddd040473c0374fb95fff14303ef9c,
+        type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 1904691131}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bddd040473c0374fb95fff14303ef9c, type: 2}
   m_IsPrefabParent: 0
@@ -1727,6 +1743,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1000010715248290, guid: ef0d8c677453e3f4197c5e45387a6c77,
         type: 2}
+    - target: {fileID: 114000010307489930, guid: 1a931bd5372c074429ab15f62cc4087e,
+        type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 1904691131}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a931bd5372c074429ab15f62cc4087e, type: 2}
   m_IsPrefabParent: 0
@@ -1942,6 +1963,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1000012419433950, guid: b86161ca14e11dc488fc84b3cf715e20,
         type: 2}
+    - target: {fileID: 114000010307489930, guid: 1a931bd5372c074429ab15f62cc4087e,
+        type: 2}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 1904691131}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a931bd5372c074429ab15f62cc4087e, type: 2}
   m_IsPrefabParent: 0
@@ -4115,3 +4141,4 @@ MonoBehaviour:
   - {fileID: 1000011417983338, guid: f432c370ed1dfed449c654f677a06402, type: 2}
   spawnWaves: 8
   delayBetweenSpawn: 1.5
+  gameController: {fileID: 1904691131}

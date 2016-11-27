@@ -68,11 +68,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010644439108}
-  - 114: {fileID: 114000010680853726}
   - 114: {fileID: 114000011144410434}
   - 82: {fileID: 82000011027818366}
   - 50: {fileID: 50000012117138744}
   - 61: {fileID: 61000012322207668}
+  - 114: {fileID: 114000012411991624}
   m_Layer: 0
   m_Name: Level 2 Enemy Ship
   m_TagString: Enemy
@@ -276,20 +276,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114000010680853726
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013490176402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8846417901f4942d2a5fa9e32ce69d45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion: {fileID: 100012, guid: 160925a6fe2664f2a978566b819f0af0, type: 2}
-  scoreValue: 20
-  destroyableByShots: 1
 --- !u!114 &114000011144410434
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -311,6 +297,21 @@ MonoBehaviour:
   - {fileID: 1000013424808828, guid: 0e2af8728add68d47b63376d727340b3, type: 2}
   - {fileID: 1000011235182668, guid: af35f4cc44b46b442b4841832b85be63, type: 2}
   - {fileID: 1000013424808828, guid: 0e2af8728add68d47b63376d727340b3, type: 2}
+--- !u!114 &114000012411991624
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013490176402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca865ff509c3de4a805b53bb166952a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxShipHp: 100
+  damageOnContact: 100
+  explosion: {fileID: 100012, guid: 160925a6fe2664f2a978566b819f0af0, type: 2}
+  scoreValue: 20
 --- !u!198 &198000010582929792
 ParticleSystem:
   m_ObjectHideFlags: 1

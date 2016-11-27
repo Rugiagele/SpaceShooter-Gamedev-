@@ -68,13 +68,13 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010434153408}
-  - 114: {fileID: 114000012355595698}
   - 114: {fileID: 114000013932056948}
   - 114: {fileID: 114000012978731142}
   - 114: {fileID: 114000010239731540}
   - 82: {fileID: 82000010743490558}
   - 50: {fileID: 50000013074013580}
   - 61: {fileID: 61000010459627370}
+  - 114: {fileID: 114000011062064952}
   m_Layer: 0
   m_Name: Level 3 Enemy Ship
   m_TagString: Enemy
@@ -294,7 +294,7 @@ MonoBehaviour:
   vectors:
   - {fileID: 1000010859705422, guid: 544a5811b5b401a478317ff40d5f3a87, type: 2}
   - {fileID: 1000013424808828, guid: 0e2af8728add68d47b63376d727340b3, type: 2}
---- !u!114 &114000012355595698
+--- !u!114 &114000011062064952
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -302,12 +302,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000013535412058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8846417901f4942d2a5fa9e32ce69d45, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ca865ff509c3de4a805b53bb166952a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxShipHp: 100
+  damageOnContact: 100
   explosion: {fileID: 100012, guid: 160925a6fe2664f2a978566b819f0af0, type: 2}
   scoreValue: 20
-  destroyableByShots: 1
 --- !u!114 &114000012978731142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -332,10 +333,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365dd2da98dd9431b8c5d7406c200eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shot: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
+  missileDamage: 10
+  missileSpeed: 12
+  fireRate: 1
   shotSpawns:
   - {fileID: 4000013924775752}
-  fireRate: 1.5
+  shotGameObject: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
+  shotCount: 3
+  timeBetweenShots: 0.2
   delay: 0.5
 --- !u!198 &198000010956403088
 ParticleSystem:

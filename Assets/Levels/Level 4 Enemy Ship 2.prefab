@@ -49,8 +49,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014120714342}
-  - 114: {fileID: 114000012474179378}
-  - 114: {fileID: 114000011901174270}
   - 114: {fileID: 114000010853017718}
   - 114: {fileID: 114000013950665400}
   - 82: {fileID: 82000013552477522}
@@ -58,6 +56,7 @@ GameObject:
   - 114: {fileID: 114000012081191076}
   - 50: {fileID: 50000012999214458}
   - 61: {fileID: 61000010962086636}
+  - 114: {fileID: 114000010290106140}
   m_Layer: 0
   m_Name: Level 4 Enemy Ship 2
   m_TagString: Enemy
@@ -309,6 +308,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114000010290106140
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012419433950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca865ff509c3de4a805b53bb166952a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxShipHp: 100
+  damageOnContact: 100
+  explosion: {fileID: 100012, guid: 160925a6fe2664f2a978566b819f0af0, type: 2}
+  scoreValue: 50
 --- !u!114 &114000010853017718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -322,23 +336,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: -5
   randomizeSpeed: 0
---- !u!114 &114000011901174270
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012419433950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 365dd2da98dd9431b8c5d7406c200eeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shot: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
-  shotSpawns:
-  - {fileID: 4000010854271462}
-  - {fileID: 4000011975916974}
-  fireRate: 2.1
-  delay: 0
 --- !u!114 &114000012081191076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -350,25 +347,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365dd2da98dd9431b8c5d7406c200eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shot: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
+  missileDamage: 20
+  missileSpeed: 10
+  fireRate: 2.1
   shotSpawns:
   - {fileID: 4000011975916974}
-  fireRate: 2.1
+  shotGameObject: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
+  shotCount: 1
+  timeBetweenShots: 0
   delay: 0.7
---- !u!114 &114000012474179378
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012419433950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8846417901f4942d2a5fa9e32ce69d45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion: {fileID: 100012, guid: 160925a6fe2664f2a978566b819f0af0, type: 2}
-  scoreValue: 50
-  destroyableByShots: 1
 --- !u!114 &114000013180575470
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -380,10 +367,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365dd2da98dd9431b8c5d7406c200eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shot: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
+  missileDamage: 20
+  missileSpeed: 10
+  fireRate: 2.1
   shotSpawns:
   - {fileID: 4000010854271462}
-  fireRate: 2.1
+  shotGameObject: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
+  shotCount: 1
+  timeBetweenShots: 0
   delay: 1.4
 --- !u!114 &114000013950665400
 MonoBehaviour:
