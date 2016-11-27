@@ -17,7 +17,6 @@ public class PlayerWeaponController : MonoBehaviour
 			if(playerWeapon.weaponType == WeaponBase.WeaponType.basic)
             {
                 _activeWeapon = playerWeapon;
-                //_activeWeapon.ammoCount = 50;
                 playerWeapon.enabled = true;
             }
             else
