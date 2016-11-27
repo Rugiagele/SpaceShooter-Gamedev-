@@ -2248,6 +2248,10 @@ Prefab:
       propertyPath: InitialModule.startSpeed.scalar
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f4ec271e525e14ca9927a07e6a2e153d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4ec271e525e14ca9927a07e6a2e153d, type: 2}
   m_IsPrefabParent: 0
