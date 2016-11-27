@@ -14,10 +14,10 @@ public class PlayerWeaponController : MonoBehaviour
         {
             playerWeapon.playerWeaponController = this;
             playerWeapon._playerId = _playerId;
-            if(playerWeapon.weaponType == WeaponBase.WeaponType.basic)
+			if(playerWeapon.weaponType == WeaponBase.WeaponType.basic)
             {
                 _activeWeapon = playerWeapon;
-                _activeWeapon.ammoCount = 50;
+                //_activeWeapon.ammoCount = 50;
                 playerWeapon.enabled = true;
             }
             else
@@ -29,7 +29,8 @@ public class PlayerWeaponController : MonoBehaviour
 
     public void SetActive(WeaponBase.WeaponType weaponType, int ammo)
     {
-        _activeWeapon.enabled = false; foreach (var playerWeapon in playerWeapons)
+        _activeWeapon.enabled = false;
+		foreach (var playerWeapon in playerWeapons)
         {
             playerWeapon.playerWeaponController = this;
             playerWeapon._playerId = _playerId;
@@ -38,6 +39,7 @@ public class PlayerWeaponController : MonoBehaviour
                 _activeWeapon = playerWeapon;
                 _activeWeapon.enabled = true;
                 _activeWeapon.ammoCount = ammo;
+				return;
             }
         }
     }

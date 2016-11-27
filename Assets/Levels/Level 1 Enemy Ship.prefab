@@ -291,6 +291,7 @@ MonoBehaviour:
   maxShipHp: 100
   damageOnContact: 100
   explosion: {fileID: 100012, guid: 160925a6fe2664f2a978566b819f0af0, type: 2}
+  _gameController: {fileID: 0}
   scoreValue: 20
 --- !u!114 &114000011533492550
 MonoBehaviour:
@@ -304,8 +305,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundary:
-    xMin: -6
-    xMax: 6
+    xMin: -9
+    xMax: 9
     yMin: -17
     yMax: 17
   tilt: 10

@@ -62,13 +62,12 @@ public class GameController : MonoBehaviour
             p2Controller = player2.GetComponent<PlayerController>();
             p2Controller.Initialize(this, 2, player2Color);
             player2LivesText.text = "Player 2 status: " + p2Controller.GetPlayerHp() + "%";
-            player2.GetComponent<MeshRenderer>().materials[0].color = player2Color;
         }
         else
         {
             var player1 = Instantiate(playerPrefab, new Vector3(0, -1, 0), Quaternion.identity) as GameObject;
             p1Controller = player1.GetComponent<PlayerController>();
-            p1Controller.Initialize(this, 1, new Color(1, 1, 1));
+            p1Controller.Initialize(this, 1, new Color(1, 0.2f, 0.2f));
             player1LivesText.text = "Player status: " + p1Controller.GetPlayerHp() + "%";
         }
         gameOver = false;
@@ -89,8 +88,6 @@ public class GameController : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         Time.timeScale = 1;
         initializing = false;
-
-
     }
 
     void Update()
@@ -109,21 +106,12 @@ public class GameController : MonoBehaviour
             foreach (Level level in levels)
             {
                 yield return StartCoroutine(level.Spawn());
-                DropPowerupRandom();
-                //powerUps[];
             }
             yield return new WaitForSeconds(4);
             YouWin();
         }
     }
-
-    public void DropPowerupRandom()
-    {
-        Vector3 spawnPosition = new Vector3(UnityEngine.Random.Range(-7, 7), 1, 10);
-        int luckyNumber = Random.Range(0, powerUps.Length);
-        GameObject powerUp = powerUps[luckyNumber];
-        Instantiate(powerUp, spawnPosition, Quaternion.identity);
-    }
+		
     public void DropPowerupOnKill(Vector3 position)
     {
         Vector3 spawnPosition = position;

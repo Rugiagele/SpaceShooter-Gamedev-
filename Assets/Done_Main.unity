@@ -908,7 +908,7 @@ Transform:
   m_GameObject: {fileID: 1112871355}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5, z: 0}
-  m_LocalScale: {x: 19, y: 20, z: 1}
+  m_LocalScale: {x: 20, y: 20, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2017,8 +2017,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUps:
   - {fileID: 1000013134232704, guid: e3c04ccfda0c72841b03b832ae2fe51e, type: 2}
-  - {fileID: 1000012845364806, guid: 437ffab25f5b4d34f9b77b4822579771, type: 2}
+  - {fileID: 1000012845364806, guid: 3f9b6ca5b1673654c824af451f5baa79, type: 2}
   - {fileID: 1000010719199420, guid: 16e787a3a9a8e3c42aba6528fde919ef, type: 2}
+  - {fileID: 1000010719199420, guid: 1b61d0613a0882c498a7db8327c9308b, type: 2}
   playerPrefab: {fileID: 1000014117707230, guid: ef5c5935d2060c241b2761b8b0d16191,
     type: 2}
   player2Prefab: {fileID: 1000014117707230, guid: ef5c5935d2060c241b2761b8b0d16191,
