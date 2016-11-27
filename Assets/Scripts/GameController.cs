@@ -2,19 +2,13 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System;
-using Random = UnityEngine.Random;
 
 public class GameController : MonoBehaviour
 {
     public GameObject[] powerUps;
     public GameObject playerPrefab;
     public GameObject player2Prefab;
-
-    public Level[] levels;
-    public float startWait;
-
-
+    
     public Text gameOverText;
     public Text restartText;
     public Text scoreText;
@@ -75,7 +69,6 @@ public class GameController : MonoBehaviour
         gameOverText.text = "";
         score = 0;
         UpdateScore();
-        StartCoroutine(SpawnWaves());
         if (isMultiplayer)
         {
             highScore = PlayerPrefs.GetInt("HighScoreMulti", 0);
@@ -98,20 +91,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    IEnumerator SpawnWaves()
-    {
-        yield return new WaitForSeconds(startWait);
-        while (!gameOver)
-        {
-            foreach (Level level in levels)
-            {
-                yield return StartCoroutine(level.Spawn());
-            }
-            yield return new WaitForSeconds(4);
-            YouWin();
-        }
-    }
-		
+
     public void DropPowerupOnKill(Vector3 position)
     {
         Vector3 spawnPosition = position;
