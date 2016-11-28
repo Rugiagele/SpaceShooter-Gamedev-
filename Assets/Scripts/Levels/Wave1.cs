@@ -8,6 +8,9 @@ public class Wave1 : LevelBase
     public int shipCount;
     public Vector3[] spawnPoints;
     public float delayBetweenSpawns;
+    public PathPart[] trajectories;
+    public bool repeat;
+    public int repeatFrom;
 
     public override void Spawn()
     {
@@ -18,19 +21,20 @@ public class Wave1 : LevelBase
     {
         while (shipCount > 0)
         {
-            foreach (var spawnPoint in spawnPoints)
+            var spawnedShip = Instantiate(enemyShip, spawnPoints[0], Quaternion.identity) as GameObject;
+            spawnedShip.GetComponent<ShipBase>().Initialize(gameController);
+            var moverScript = spawnedShip.AddComponent<EnemyMover>();
+            moverScript.repeat = repeat;
+            moverScript.repeatFrom = repeatFrom;
+            moverScript.trajectory = trajectories;
+            spawnedShip.transform.parent = this.transform;
+            shipCount--;
+            if (shipCount <= 0)
             {
-                var spawnedShip = Instantiate(enemyShip, spawnPoint, Quaternion.identity) as GameObject;
-                spawnedShip.GetComponent<ShipBase>().Initialize(gameController);
-                spawnedShip.transform.parent = this.transform;
-                shipCount--;
-                if (shipCount <= 0)
-                {
-                    break;
-                }
+                break;
             }
             yield return new WaitForSeconds(delayBetweenSpawns);
-            spawningEnded = true;
         }
+        spawningEnded = true;
     }
 }

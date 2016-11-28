@@ -29,42 +29,45 @@ public class EnemyMover : MonoBehaviour
 
     void Update()
     {
-        if (step > trajectory.Length)
-        {
-            if (repeat)
-            {
-                step = repeatFrom;
-            }
-            else
-            {
-                _rigidbody2d.velocity = new Vector2();
-                return;
-            }
-        }
         if (Time.time >= nextMove)
         {
-            nextMove = Time.time + trajectory[step].time;
-            if (trajectory[step].toggleWeapon)
+            if(step>=trajectory.Length)
             {
-                foreach (var weapon in weapons)
+                if (repeat && repeatFrom < step)
                 {
-                    weapon.enabled = !weapon.enabled;
+                    step = repeatFrom;
                 }
-            }
-            if (trajectory[step].isMoving)
-            {
-                if (trajectory[step].time <= 0)
+                else
                 {
-                    Debug.LogWarning("trajectory time must be above 0");
                     _rigidbody2d.velocity = new Vector2();
-                    step++;
                     return;
                 }
-                var direction = new Vector2(transform.position.x - trajectory[step].destination.x, transform.position.y - trajectory[step].destination.y);
-                var speed = direction.magnitude / trajectory[step].time;
-                _rigidbody2d.velocity = -direction.normalized * speed;
             }
-            step++;
+            if (step < trajectory.Length)
+            {
+                nextMove = Time.time + trajectory[step].time;
+                if (trajectory[step].toggleWeapon)
+                {
+                    foreach (var weapon in weapons)
+                    {
+                        weapon.enabled = !weapon.enabled;
+                    }
+                }
+                if (trajectory[step].isMoving)
+                {
+                    if (trajectory[step].time <= 0)
+                    {
+                        Debug.LogWarning("trajectory time must be above 0");
+                        _rigidbody2d.velocity = new Vector2();
+                        step++;
+                        return;
+                    }
+                    var direction = new Vector2(transform.position.x - trajectory[step].destination.x, transform.position.y - trajectory[step].destination.y);
+                    var speed = direction.magnitude / trajectory[step].time;
+                    _rigidbody2d.velocity = -direction.normalized * speed;
+                }
+                step++;
+            }
         }
     }
 }

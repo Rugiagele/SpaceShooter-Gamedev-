@@ -791,6 +791,9 @@ MonoBehaviour:
   - {x: 0, y: 16, z: 0}
   - {x: 3, y: 16, z: 0}
   delayBetweenSpawns: 1.5
+  trajectories: []
+  repeat: 0
+  repeatFrom: 0
 --- !u!1 &981346730
 GameObject:
   m_ObjectHideFlags: 0
@@ -2427,3 +2430,14 @@ MonoBehaviour:
   spawnPoints:
   - {x: -6, y: 16, z: 0}
   delayBetweenSpawns: 2
+  trajectories:
+  - destination: {x: -4, y: 10}
+    time: 2
+    toggleWeapon: 0
+    isMoving: 1
+  - destination: {x: 4, y: 10}
+    time: 2
+    toggleWeapon: 0
+    isMoving: 1
+  repeat: 1
+  repeatFrom: 0
