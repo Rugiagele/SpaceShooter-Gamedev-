@@ -1077,8 +1077,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 266.25, y: -190.03336}
-  m_SizeDelta: {x: 352.5, y: 155}
+  m_AnchoredPosition: {x: 480, y: -403.4389}
+  m_SizeDelta: {x: 780, y: 590.2739}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &805540014
 MonoBehaviour:
@@ -1115,7 +1115,12 @@ MonoBehaviour:
   m_Text: "Game made by:\nRugil\u0117 Bendinskait\u0117 - programing and graphics\nKarolis
     Grigali\u016Bnas - programing and design\n\u017Dygimantas \u0160irvys - sound
     collection\n\nPart of ui code:\n\"Unity Samples: UI\" (https://www.assetstore.unity3d.com/en/?gclid=CLWWwve7y9ACFeFJcgod13QMDA#!/content/25468)\nGraphics:
-    Rugil\u0117 Bendinskait\u0117\nMeniu graphics: \"Unity Samples: UI\"\n\n\n"
+    Rugil\u0117 Bendinskait\u0117\nMeniu graphics: \"Unity Samples: UI\"\n\nSound:\nmain.mp3
+    - wav-library.net\r\nshotgun - freesoundeffects.com\r\ncannon - soundbible.com\r\nlaser.wav
+    - Vladislav Vitvitskii\r\nmachinegun.wav - Vladislav Vitvitskii\r\nrocket_launcher.wav
+    - Vladislav Vitvitskii\r\n\r\nSounds not mentioned here were created by \u017Dygimantas
+    \u0160irvys using open source tool (http://www.superflashbros.net/as3sfxr/), under
+    COD licence\n\n\n\n"
 --- !u!222 &805540015
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1621,8 +1626,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 266.25, y: -90.833336}
-  m_SizeDelta: {x: 352.5, y: 51.66667}
+  m_AnchoredPosition: {x: 480, y: -86.65097}
+  m_SizeDelta: {x: 780, y: 43.30195}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1223310139
 MonoBehaviour:
@@ -1914,9 +1919,9 @@ RectTransform:
   - {fileID: 2046775793}
   m_Father: {fileID: 1263291197}
   m_RootOrder: 4
-  m_AnchorMin: {x: 0.25, y: 0.2}
-  m_AnchorMax: {x: 0.75, y: 0.8}
-  m_AnchoredPosition: {x: -0.000061035156, y: -0.000061035156}
+  m_AnchorMin: {x: 0.25, y: 0.02}
+  m_AnchorMax: {x: 0.75, y: 0.98}
+  m_AnchoredPosition: {x: -0.000061035156, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1403246375
@@ -3334,8 +3339,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 266.25, y: -278.90002}
-  m_SizeDelta: {x: 352.5, y: 31.000002}
+  m_AnchoredPosition: {x: 480, y: -725.8533}
+  m_SizeDelta: {x: 780, y: 54.554756}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2046775794
 MonoBehaviour:
