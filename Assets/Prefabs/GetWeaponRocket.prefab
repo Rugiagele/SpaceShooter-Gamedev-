@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
-  ammoCount: 100
+  ammoCount: 5
 --- !u!114 &114000011398066734
 MonoBehaviour:
   m_ObjectHideFlags: 1

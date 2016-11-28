@@ -1079,7 +1079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoCount: 0
-  missileDamage: 200
+  missileDamage: 100
   missileSpeed: 15
   fireRate: 0.8
   shotSpawns:

@@ -726,7 +726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca865ff509c3de4a805b53bb166952a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxShipHp: 1000
+  maxShipHp: 2000
   damageOnContact: 200
   explosion: {fileID: 100012, guid: 160925a6fe2664f2a978566b819f0af0, type: 2}
   _gameController: {fileID: 0}

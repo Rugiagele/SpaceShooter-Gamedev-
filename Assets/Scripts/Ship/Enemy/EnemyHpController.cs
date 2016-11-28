@@ -60,11 +60,11 @@ public class EnemyHpController : ShipBase
         {
             _p1Damage = Mathf.RoundToInt(_p1Damage * maxShipHp / damageDone);
             _p2Damage = Mathf.RoundToInt(_p2Damage * maxShipHp / damageDone);
-            int p1Score = scoreValue * Mathf.RoundToInt(_p1Damage / maxShipHp);
+            int p1Score = Mathf.RoundToInt(scoreValue * _p1Damage / maxShipHp);
             int p2Score = scoreValue - p1Score;
             _gameController.AddScore(p1Score, p2Score);
         }
-        if (Random.value < 0.5)
+        if (Random.value < 1)
         {
             _gameController.DropPowerupOnKill(gameObject.transform.position);
         }

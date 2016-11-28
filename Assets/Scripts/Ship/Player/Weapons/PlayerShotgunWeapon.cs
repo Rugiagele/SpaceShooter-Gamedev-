@@ -20,6 +20,7 @@ public class PlayerShotgunWeapon : WeaponBase
                 missileBase.damageSource = _playerId;
             }
             GetComponent<AudioSource>().Play();
+            ammoCount--;
         }
     }
 }

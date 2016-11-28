@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  ammoCount: 100
+  ammoCount: 8
 --- !u!198 &198000010605400626
 ParticleSystem:
   m_ObjectHideFlags: 1

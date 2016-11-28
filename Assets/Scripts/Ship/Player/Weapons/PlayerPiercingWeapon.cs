@@ -17,6 +17,7 @@ public class PlayerPiercingWeapon : WeaponBase
             missileBase.missileSpeed = missileSpeed;
             missileBase.damageSource = _playerId;
             GetComponent<AudioSource>().Play();
+            ammoCount--;
         }
     }
 }
