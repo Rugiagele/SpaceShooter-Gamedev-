@@ -522,6 +522,74 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 229816113}
+--- !u!1 &230069211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 230069212}
+  - 222: {fileID: 230069214}
+  - 114: {fileID: 230069213}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &230069212
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 230069211}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1263291197}
+  m_RootOrder: 0
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 2560, y: 2560}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &230069213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 230069211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.509}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &230069214
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 230069211}
 --- !u!1 &277307731
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,7 +623,7 @@ RectTransform:
   - {fileID: 53864607}
   - {fileID: 1264354636}
   m_Father: {fileID: 1263291197}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: 0.25, y: 0.2}
   m_AnchorMax: {x: 0.75, y: 0.8}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1198,7 +1266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &730955377
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1212,7 +1280,7 @@ RectTransform:
   m_Children:
   - {fileID: 2014773656}
   m_Father: {fileID: 1263291197}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_AnchorMin: {x: 0.25, y: 0.2}
   m_AnchorMax: {x: 0.75, y: 0.8}
   m_AnchoredPosition: {x: -0.000060281633, y: 5.565061}
@@ -1365,7 +1433,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Game made by: <inser names here>'
+  m_Text: 'Game made by: <insert names here>'
 --- !u!222 &805540015
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1409,7 +1477,7 @@ RectTransform:
   - {fileID: 323455325}
   - {fileID: 2081581769}
   m_Father: {fileID: 1263291197}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_AnchorMin: {x: 0.25, y: 0.2}
   m_AnchorMax: {x: 0.75, y: 0.8}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1535,7 +1603,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Back
+  m_Text: The game is fun. You collect weapons, you shoot, you lose weapons.....
 --- !u!222 &892401686
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2072,6 +2140,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 230069212}
   - {fileID: 885086478}
   - {fileID: 277307732}
   - {fileID: 1745955405}
@@ -2284,7 +2353,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Back
+  m_Text: 'Player 2 controls: arrows to move, right enter to shoot'
 --- !u!222 &1319692912
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2370,7 +2439,7 @@ RectTransform:
   - {fileID: 805540013}
   - {fileID: 2046775793}
   m_Father: {fileID: 1263291197}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_AnchorMin: {x: 0.25, y: 0.2}
   m_AnchorMax: {x: 0.75, y: 0.8}
   m_AnchoredPosition: {x: -0.000061035156, y: -0.000061035156}
@@ -3286,7 +3355,7 @@ RectTransform:
   - {fileID: 620668762}
   - {fileID: 1792323175}
   m_Father: {fileID: 1263291197}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: 0.25, y: 0.2}
   m_AnchorMax: {x: 0.75, y: 0.8}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -3678,7 +3747,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Back
+  m_Text: 'Player 1 controls: WASD to move, space to shoot'
 --- !u!222 &1981736564
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -2,13 +2,14 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
 
 public class GameController : MonoBehaviour
 {
     public GameObject[] powerUps;
     public GameObject playerPrefab;
     public GameObject player2Prefab;
-    
+
     public Text gameOverText;
     public Text restartText;
     public Text scoreText;
@@ -26,12 +27,16 @@ public class GameController : MonoBehaviour
     public PlayerController p1Controller;
     public PlayerController p2Controller;
 
+    public GameObject pauseMenu;
+    public Text resumeButton;
+
     private bool gameOver;
     private int score;
     private int score1;
     private int score2;
     private int highScore;
     private bool initializing = true;
+    public bool isPaused = false;
 
     void Awake()
     {
@@ -70,6 +75,7 @@ public class GameController : MonoBehaviour
             player1LivesText.text = "Player status: " + p1Controller.GetPlayerHp() + "%";
         }
         gameOver = false;
+        isPaused = false;
         restartText.text = "Press 'R' for Restart";
         gameOverText.text = "";
         score = 0;
@@ -86,6 +92,7 @@ public class GameController : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         Time.timeScale = 1;
         initializing = false;
+        resumeButton.text = "Resume";
     }
 
     void Update()
@@ -94,13 +101,41 @@ public class GameController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+        if (Input.GetKeyDown(KeyCode.P)|| Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePause();
+        }
     }
 
+    public void TogglePause()
+    {
+        isPaused = !isPaused;
+        if(isPaused)
+        {
+            Time.timeScale = 0;
+            pauseMenu.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            pauseMenu.SetActive(false);
+            if(gameOver)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+        Destroy(gameObject);
+    }
 
     public void DropPowerupOnKill(Vector3 position)
     {
         Vector3 spawnPosition = position;
-        int luckyNumber = Random.Range(0, powerUps.Length);
+        int luckyNumber = UnityEngine.Random.Range(0, powerUps.Length);
         GameObject powerUp = powerUps[luckyNumber];
         Instantiate(powerUp, spawnPosition, Quaternion.identity);
     }
@@ -132,8 +167,8 @@ public class GameController : MonoBehaviour
         {
             score1 += p1Score;
             score2 += p2Score;
-            player1ScoreText.text = "Score: "+score1;
-            player2ScoreText.text = "Score: "+score2;
+            player1ScoreText.text = "Score: " + score1;
+            player2ScoreText.text = "Score: " + score2;
         }
         UpdateScore();
     }
@@ -141,7 +176,7 @@ public class GameController : MonoBehaviour
     void UpdateScore()
     {
         scoreText.text = "Score: " + score;
-        if(isMultiplayer)
+        if (isMultiplayer)
         {
             //display individual score
         }
@@ -176,6 +211,7 @@ public class GameController : MonoBehaviour
 
     private void GameOver(string text)
     {
+        resumeButton.text = "Play again";
         gameOverText.text = text;
         gameOver = true;
         StartCoroutine(ScaleTime(1, 0, 0.75f));
