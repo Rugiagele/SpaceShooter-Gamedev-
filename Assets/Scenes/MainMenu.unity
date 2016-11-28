@@ -1114,7 +1114,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Game made by:\nRugil\u0117 Bendinskait\u0117 - programing and graphics\nKarolis
     Grigali\u016Bnas - programing and design\n\u017Dygimantas \u0160irvys - sound
-    collection\n\nPart of ui code:\n\"Unity Samples: UI\" (https://www.assetstore.unity3d.com/en/?gclid=CLWWwve7y9ACFeFJcgod13QMDA#!/content/25468)\nGraphics:
+    collection\nGintautas Samuolis\r\nAntanas Sinica\r\n\nPart of ui code:\n\"Unity
+    Samples: UI\" (https://www.assetstore.unity3d.com/en/?gclid=CLWWwve7y9ACFeFJcgod13QMDA#!/content/25468)\nGraphics:
     Rugil\u0117 Bendinskait\u0117\nMeniu graphics: \"Unity Samples: UI\"\n\nSound:\nmain.mp3
     - wav-library.net\r\nshotgun - freesoundeffects.com\r\ncannon - soundbible.com\r\nlaser.wav
     - Vladislav Vitvitskii\r\nmachinegun.wav - Vladislav Vitvitskii\r\nrocket_launcher.wav
@@ -1919,8 +1920,8 @@ RectTransform:
   - {fileID: 2046775793}
   m_Father: {fileID: 1263291197}
   m_RootOrder: 4
-  m_AnchorMin: {x: 0.25, y: 0.02}
-  m_AnchorMax: {x: 0.75, y: 0.98}
+  m_AnchorMin: {x: 0.25, y: 0}
+  m_AnchorMax: {x: 0.75, y: 1}
   m_AnchoredPosition: {x: -0.000061035156, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
