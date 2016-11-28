@@ -24,6 +24,10 @@ public class BonusPoints : MonoBehaviour
         if (other.tag == "Player")
         {
             gameController.AddScore(scoreValue, 1); //TODO: pass player Id
+			if (other.GetComponent<AudioSource>() != null)
+			{
+				other.GetComponent<AudioSource>().Play();
+			}
             Destroy(gameObject);
         }
     }

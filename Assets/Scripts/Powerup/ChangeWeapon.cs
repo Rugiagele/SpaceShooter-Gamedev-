@@ -11,6 +11,10 @@ public class ChangeWeapon : MonoBehaviour
         if (other.tag == "Player")
         {
 			other.GetComponent<PlayerWeaponController> ().SetActive (type, ammoCount);
+			if (other.GetComponent<AudioSource>() != null)
+			{
+				other.GetComponent<AudioSource>().Play();
+			}
             Destroy(gameObject);
         }
     }

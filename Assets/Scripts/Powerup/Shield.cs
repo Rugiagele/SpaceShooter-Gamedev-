@@ -10,6 +10,10 @@ public class Shield : MonoBehaviour
         if (other.tag == "Player")
         {
 			other.GetComponent<PlayerController>().AddInvulnerability (time);
+			if (other.GetComponent<AudioSource>() != null)
+			{
+				other.GetComponent<AudioSource>().Play();
+			}
             Destroy(gameObject);
         }
     }
