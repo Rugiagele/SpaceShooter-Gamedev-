@@ -1030,8 +1030,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 054c19cd9824a4257a98a59874c988f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxShipHp: 1000
-  damageOnContact: 5000
+  maxShipHp: 100
+  damageOnContact: 200
   explosion: {fileID: 100008, guid: 3455fe69f7ddc4604b95bf9b0a1e88d7, type: 2}
   _gameController: {fileID: 0}
   speed: 10
@@ -1058,7 +1058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoCount: 0
-  missileDamage: 40
+  missileDamage: 80
   missileSpeed: 20
   fireRate: 0.5
   shotSpawns:
@@ -1100,7 +1100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoCount: 0
-  missileDamage: 10
+  missileDamage: 40
   missileSpeed: 20
   fireRate: 0.1
   shotSpawns:
@@ -1123,7 +1123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoCount: 0
-  missileDamage: 20
+  missileDamage: 50
   missileSpeed: 20
   fireRate: 0.3
   shotSpawns:
@@ -1144,7 +1144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoCount: 0
-  missileDamage: 20
+  missileDamage: 50
   missileSpeed: 20
   fireRate: 0.4
   shotSpawns:
