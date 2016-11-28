@@ -10,7 +10,13 @@ public abstract class ShipBase : MonoBehaviour
     public GameObject explosion;
     protected int _shipHp;
 	public GameController _gameController;
+	private float tintTime = .1f;
+	public float tintExpireTime;
+	public Color tintColor = new Color (1, 0, 0);
+	public Color originalColor;
     protected Rigidbody2D _rigidbody2d;
+	public MeshRenderer meshRenderer;
+	public bool isTinted = false;
 
     // Use this for initialization
     void Awake()
@@ -33,4 +39,12 @@ public abstract class ShipBase : MonoBehaviour
     protected abstract void OnShipDestroy();
 
     public abstract void OnTriggerEnter2D(Collider2D other);
+
+	public virtual void TintOnHit()
+	{
+		isTinted = true;
+		originalColor = meshRenderer.materials [0].color;
+		meshRenderer.materials[0].color *= tintColor;
+		tintExpireTime = Time.time + tintTime;
+	}
 }

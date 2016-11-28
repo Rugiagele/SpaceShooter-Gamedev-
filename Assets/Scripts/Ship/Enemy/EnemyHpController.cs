@@ -6,6 +6,14 @@ public class EnemyHpController : ShipBase
     private int _p1Damage;
     private int _p2Damage;
 
+	void Update()
+	{
+		if (isTinted && Time.time > tintExpireTime) {
+			meshRenderer.materials [0].color = originalColor;
+			isTinted = false;
+		}
+	}
+
     public override void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Boundary" || other.tag == "Enemy" || other.tag == "Powerup")
@@ -32,6 +40,7 @@ public class EnemyHpController : ShipBase
 
     public override void ChangeHp(int changeAmount, int playerId)
     {
+		TintOnHit ();
         if(playerId == 1)
         {
             _p1Damage += changeAmount;

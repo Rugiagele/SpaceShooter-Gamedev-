@@ -45,16 +45,19 @@ public class PlayerController : ShipBase
 
     void Update()
     {
-        if (_isInvulnerable)
-        {
-            invulneravilityTime -= Time.deltaTime;
-            if (invulneravilityTime <= 0)
-            {
-                invulneravilityTime = 0;
-                _isInvulnerable = false;
-                GetComponent<MeshRenderer>().materials[0].color = _playerColor;
-            }
-        }
+		if (_isInvulnerable) {
+			invulneravilityTime -= Time.deltaTime;
+			if (invulneravilityTime <= 0) {
+				invulneravilityTime = 0;
+				_isInvulnerable = false;
+				GetComponent<MeshRenderer> ().materials [0].color = _playerColor;
+			}
+		} else {
+			if (isTinted && Time.time > tintExpireTime) {
+				meshRenderer.materials [0].color = originalColor;
+				isTinted = false;
+			}
+		}
     }
 
     void FixedUpdate()
@@ -92,6 +95,9 @@ public class PlayerController : ShipBase
         {
             return;
         }
+		if (changeAmount < 0) {
+			TintOnHit ();
+		}
         _shipHp += changeAmount;
         _shipHp = _shipHp > maxShipHp ? maxShipHp : _shipHp;
 
