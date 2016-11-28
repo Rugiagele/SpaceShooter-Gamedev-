@@ -197,7 +197,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
@@ -296,6 +296,11 @@ MonoBehaviour:
   damageOnContact: 100
   explosion: {fileID: 100012, guid: 160925a6fe2664f2a978566b819f0af0, type: 2}
   _gameController: {fileID: 0}
+  tintExpireTime: 0
+  tintColor: {r: 1, g: 0, b: 0, a: 1}
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  meshRenderer: {fileID: 23000011147264082}
+  isTinted: 0
   scoreValue: 20
 --- !u!114 &114000014013860266
 MonoBehaviour:

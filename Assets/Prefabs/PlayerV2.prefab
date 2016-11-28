@@ -1198,6 +1198,11 @@ MonoBehaviour:
   damageOnContact: 200
   explosion: {fileID: 100008, guid: 3455fe69f7ddc4604b95bf9b0a1e88d7, type: 2}
   _gameController: {fileID: 0}
+  tintExpireTime: 0
+  tintColor: {r: 0.37515223, g: 0.25735295, b: 1, a: 1}
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  meshRenderer: {fileID: 23000013434738764}
+  isTinted: 0
   speed: 10
   speedBuffTime: 0
   tilt: 3
