@@ -55,3 +55,4 @@ MonoBehaviour:
   - {fileID: 1000011417983338, guid: f432c370ed1dfed449c654f677a06402, type: 2}
   spawnWaves: 8
   delayBetweenSpawn: 1.5
+  gameController: {fileID: 0}

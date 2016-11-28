@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyMover : MonoBehaviour
+public class BossMover : MonoBehaviour
 {
     public EnemyWeaponController[] weapons;
     
@@ -10,6 +10,11 @@ public class EnemyMover : MonoBehaviour
     private Rigidbody2D _rigidbody2d;
 
     public Trajectory trajectory;
+    public int centerPoint;
+    
+    public int[] jumpPoint;
+    public int[] jumpPointEnd;
+    private int exitPoint;
 
     void Start()
     {
@@ -21,6 +26,7 @@ public class EnemyMover : MonoBehaviour
     {
         if (Time.time >= nextMove)
         {
+            if(step == centerPoint)
             if(step>=trajectory.trajectory.Length)
             {
                 if (trajectory.repeat && trajectory.repeatFrom < step)
@@ -60,7 +66,20 @@ public class EnemyMover : MonoBehaviour
                 {
                     _rigidbody2d.velocity = new Vector2();
                 }
-                step++;
+                if(step==centerPoint)
+                {
+                    int selectedPathId = Random.Range(0, jumpPoint.Length);
+                    step = jumpPoint[selectedPathId];
+                    exitPoint = jumpPointEnd[selectedPathId];
+                }
+                else if(step==exitPoint)
+                {
+                    step = centerPoint;
+                }
+                else
+                {
+                    step++;
+                }
             }
         }
     }

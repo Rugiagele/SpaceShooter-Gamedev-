@@ -66,7 +66,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011800358658}
-  - 114: {fileID: 114000013281563626}
   - 82: {fileID: 82000013316000980}
   - 114: {fileID: 114000013072653952}
   - 114: {fileID: 114000013810073868}
@@ -373,20 +372,24 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011264833796}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 365dd2da98dd9431b8c5d7406c200eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ammoCount: 0
   missileDamage: 20
   missileSpeed: 10
-  fireRate: 2.1
+  fireRate: 1
   shotSpawns:
   - {fileID: 4000011716160288}
   shotGameObject: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
+  weaponType: 0
+  playerWeaponController: {fileID: 0}
+  _playerId: 0
   shotCount: 1
   timeBetweenShots: 0
-  delay: 1.4
+  delay: 0
 --- !u!114 &114000013207359968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -401,42 +404,32 @@ MonoBehaviour:
   maxShipHp: 100
   damageOnContact: 100
   explosion: {fileID: 100012, guid: 160925a6fe2664f2a978566b819f0af0, type: 2}
+  _gameController: {fileID: 0}
   scoreValue: 50
---- !u!114 &114000013281563626
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011264833796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ed1870013687b34a8d69d071c4e843c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
-  changeVectorAfter: 1
-  vectors:
-  - {fileID: 1000013424808828, guid: 0e2af8728add68d47b63376d727340b3, type: 2}
 --- !u!114 &114000013810073868
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011264833796}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 365dd2da98dd9431b8c5d7406c200eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ammoCount: 0
   missileDamage: 20
   missileSpeed: 10
-  fireRate: 2.1
+  fireRate: 1
   shotSpawns:
   - {fileID: 4000011970759992}
   shotGameObject: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
+  weaponType: 0
+  playerWeaponController: {fileID: 0}
+  _playerId: 0
   shotCount: 1
   timeBetweenShots: 0
-  delay: 0.7
+  delay: 0
 --- !u!198 &198000011060576938
 ParticleSystem:
   m_ObjectHideFlags: 1

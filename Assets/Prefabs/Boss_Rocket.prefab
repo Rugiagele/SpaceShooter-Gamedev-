@@ -12,8 +12,8 @@ GameObject:
   - 61: {fileID: 61000010945323374}
   - 114: {fileID: 114000013146989298}
   m_Layer: 0
-  m_Name: Player_Rocket
-  m_TagString: Bolt
+  m_Name: Boss_Rocket
+  m_TagString: EnemyBolt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -333,7 +333,7 @@ ParticleSystem:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.3254902, b: 0.3254902, a: 1}
+      maxColor: {r: 0.23529412, g: 0.5882353, b: 1, a: 1}
       minMaxState: 0
     startSize:
       scalar: 1
@@ -848,10 +848,10 @@ ParticleSystem:
           rgba: 16777215
         key1:
           serializedVersion: 2
-          rgba: 4278237695
+          rgba: 4283563840
         key2:
           serializedVersion: 2
-          rgba: 4278190335
+          rgba: 4294945536
         key3:
           serializedVersion: 2
           rgba: 16777215

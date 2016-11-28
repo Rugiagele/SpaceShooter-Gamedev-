@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour
     public Text highScoreText;
     public Text player1LivesText;
     public Text player2LivesText;
+    public Text player1ScoreText;
+    public Text player2ScoreText;
     public Toggle multiplayerToggle;
 
     public Color player1Color;
@@ -33,6 +35,7 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
+        isMultiplayer = ApplicationModel.TwoPlayers;
         GameObject[] gameControllerObjects = GameObject.FindGameObjectsWithTag("GameController");
         foreach (var gameControllerObject in gameControllerObjects)
         {
@@ -45,8 +48,7 @@ public class GameController : MonoBehaviour
         }
 
         multiplayerToggle.isOn = isMultiplayer;
-        //if (isMultiplayer)
-        if(ApplicationModel.TwoPlayers)
+        if (isMultiplayer)
         {
             var player1 = Instantiate(playerPrefab, new Vector3(-2, -1, 0), Quaternion.identity) as GameObject;
             var player2 = Instantiate(player2Prefab, new Vector3(2, -1, 0), Quaternion.identity) as GameObject;
@@ -57,6 +59,8 @@ public class GameController : MonoBehaviour
             p2Controller = player2.GetComponent<PlayerController>();
             p2Controller.Initialize(this, 2, player2Color);
             player2LivesText.text = "Player 2 status: " + p2Controller.GetPlayerHp() + "%";
+            player1ScoreText.text = "Score: 0";
+            player2ScoreText.text = "Score: 0";
         }
         else
         {
@@ -128,6 +132,8 @@ public class GameController : MonoBehaviour
         {
             score1 += p1Score;
             score2 += p2Score;
+            player1ScoreText.text = "Score: "+score1;
+            player2ScoreText.text = "Score: "+score2;
         }
         UpdateScore();
     }
