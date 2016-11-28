@@ -322,9 +322,9 @@ GameObject:
   - 23: {fileID: 23000013434738764}
   - 114: {fileID: 114000010559108928}
   - 50: {fileID: 50000010019383622}
-  - 61: {fileID: 61000013954883450}
   - 114: {fileID: 114000010089659108}
   - 82: {fileID: 82000013441828020}
+  - 60: {fileID: 60000011292886890}
   m_Layer: 0
   m_Name: PlayerV2
   m_TagString: Player
@@ -693,8 +693,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61000013954883450
-BoxCollider2D:
+--- !u!60 &60000011292886890
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -704,9 +704,23 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0.16006845, y: -0.0613653}
-  serializedVersion: 2
-  m_Size: {x: 1.4971972, y: 0.3110916}
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -0.46008974, y: 0.42700058}
+      - {x: -0.48672533, y: -0.046923757}
+      - {x: -0.28013954, y: -0.10415369}
+      - {x: -0.12953728, y: -0.10233884}
+      - {x: -0.115475774, y: 0.07845957}
+      - {x: -0.0008267611, y: 0.22102252}
+      - {x: 0.123441905, y: 0.07429707}
+      - {x: 0.122808695, y: -0.1265241}
+      - {x: 0.48999274, y: -0.07081205}
+      - {x: 0.87728655, y: 0.38759312}
+      - {x: 0.78306067, y: -0.30532768}
+      - {x: 0.51493293, y: -0.38860416}
+      - {x: -0.5411232, y: -0.37666273}
+      - {x: -0.56959796, y: 0.42930886}
 --- !u!82 &82000010968348034
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1180,7 +1194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 054c19cd9824a4257a98a59874c988f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxShipHp: 10
+  maxShipHp: 1000
   damageOnContact: 200
   explosion: {fileID: 100008, guid: 3455fe69f7ddc4604b95bf9b0a1e88d7, type: 2}
   _gameController: {fileID: 0}

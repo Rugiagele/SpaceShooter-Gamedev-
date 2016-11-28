@@ -70,8 +70,8 @@ GameObject:
   - 114: {fileID: 114000013072653952}
   - 114: {fileID: 114000013810073868}
   - 50: {fileID: 50000010520240494}
-  - 61: {fileID: 61000010269748266}
   - 114: {fileID: 114000013207359968}
+  - 60: {fileID: 60000013628503714}
   m_Layer: 0
   m_Name: Level 4 Enemy Ship 1
   m_TagString: Enemy
@@ -278,8 +278,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61000010269748266
-BoxCollider2D:
+--- !u!60 &60000013628503714
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -287,11 +287,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Points:
+    m_Paths:
+    - - {x: -0.41191393, y: -0.26645344}
+      - {x: -0.14192662, y: -0.116774246}
+      - {x: -0.09754526, y: 0.0864474}
+      - {x: 0.0192976, y: 0.085233055}
+      - {x: 0.04503462, y: -0.12083054}
+      - {x: 0.3167465, y: -0.259303}
+      - {x: 0.42517638, y: -0.4577404}
+      - {x: 0.43542892, y: -1.3055664}
+      - {x: 0.30351216, y: -1.3028718}
+      - {x: 0.20208466, y: -0.4517725}
+      - {x: -0.2699362, y: -0.44627827}
+      - {x: -0.38472548, y: -1.3017634}
+      - {x: -0.5375163, y: -1.3035616}
+      - {x: -0.52312696, y: -0.43783826}
 --- !u!82 &82000013316000980
 AudioSource:
   m_ObjectHideFlags: 1
