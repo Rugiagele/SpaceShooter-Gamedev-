@@ -59,11 +59,11 @@ public class GameController : MonoBehaviour
             var player2 = Instantiate(player2Prefab, new Vector3(2, -1, 0), Quaternion.identity) as GameObject;
             p1Controller = player1.GetComponent<PlayerController>();
             p1Controller.Initialize(this, 1, player1Color);
-            player1LivesText.text = "Player 1 status: " + p1Controller.GetPlayerHp() + "%";
+            player1LivesText.text = "Player 1 health: " + p1Controller.GetPlayerHp() + "%";
 
             p2Controller = player2.GetComponent<PlayerController>();
             p2Controller.Initialize(this, 2, player2Color);
-            player2LivesText.text = "Player 2 status: " + p2Controller.GetPlayerHp() + "%";
+			player2LivesText.text = "Player 2 health: " + p2Controller.GetPlayerHp() + "%";
             player1ScoreText.text = "Score: 0";
             player2ScoreText.text = "Score: 0";
         }
@@ -72,7 +72,7 @@ public class GameController : MonoBehaviour
             var player1 = Instantiate(playerPrefab, new Vector3(0, -1, 0), Quaternion.identity) as GameObject;
             p1Controller = player1.GetComponent<PlayerController>();
             p1Controller.Initialize(this, 1, new Color(1, 0.2f, 0.2f));
-            player1LivesText.text = "Player status: " + p1Controller.GetPlayerHp() + "%";
+			player1LivesText.text = "Player health: " + p1Controller.GetPlayerHp() + "%";
         }
         gameOver = false;
         isPaused = false;
