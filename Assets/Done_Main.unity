@@ -3078,6 +3078,8 @@ MonoBehaviour:
   player2LivesText: {fileID: 1871336604}
   player1ScoreText: {fileID: 1503532843}
   player2ScoreText: {fileID: 467377222}
+  player1AmmoText: {fileID: 772042940}
+  player2AmmoText: {fileID: 1538277683}
   multiplayerToggle: {fileID: 1617667486}
   player1Color: {r: 0.86764705, g: 0.49762112, b: 0.49762112, a: 0}
   player2Color: {r: 0.30276814, g: 0.7352941, b: 0.6279084, a: 0}
