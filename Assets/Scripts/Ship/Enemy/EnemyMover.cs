@@ -10,6 +10,7 @@ public class EnemyMover : MonoBehaviour
     private Rigidbody2D _rigidbody2d;
 
     public Trajectory trajectory;
+	private float tilt = 3;
 
     void Start()
     {
@@ -64,4 +65,10 @@ public class EnemyMover : MonoBehaviour
             }
         }
     }
+
+	void FixedUpdate()
+	{
+		transform.rotation = Quaternion.Euler (0.0f, _rigidbody2d.velocity.x * -tilt, 0.0f);
+	}
+
 }
