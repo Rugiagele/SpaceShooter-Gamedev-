@@ -1009,13 +1009,13 @@ ParticleSystem:
           rgba: 16777215
         key1:
           serializedVersion: 2
-          rgba: 1677721855
+          rgba: 1342177535
         key2:
           serializedVersion: 2
-          rgba: 1677763839
+          rgba: 788571391
         key3:
           serializedVersion: 2
-          rgba: 16756845
+          rgba: 1358934125
         key4:
           serializedVersion: 2
           rgba: 16777215
@@ -1037,15 +1037,15 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 7710
-        atime2: 37008
-        atime3: 65535
+        atime1: 9638
+        atime2: 23708
+        atime3: 35273
         atime4: 65535
         atime5: 0
         atime6: 0
         atime7: 0
         m_NumColorKeys: 5
-        m_NumAlphaKeys: 4
+        m_NumAlphaKeys: 5
       minGradient:
         key0:
           serializedVersion: 2
