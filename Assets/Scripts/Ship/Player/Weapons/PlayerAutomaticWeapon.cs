@@ -12,6 +12,7 @@ public class PlayerAutomaticWeapon : WeaponBase
         if (Input.GetButton("Fire" + _playerId) && Time.time > _nextFire)
         {
             ammoCount--;
+			updateAmmo (ammoCount);
             _nextFire = Time.time + fireRate * _fireRateCof;
             int source = Random.Range(0, shotSpawns.Length);
             var shotGo = Instantiate(shotGameObject, shotSpawns[source].position, shotSpawns[source].rotation) as GameObject;

@@ -6,7 +6,13 @@ public class PlayerWeaponController : MonoBehaviour
 {
     public WeaponBase[] playerWeapons;
     public int _playerId;
-    private WeaponBase _activeWeapon;
+    public WeaponBase _activeWeapon;
+	public GameController _gameController;
+
+	public void Initialize(GameController gameController)
+	{
+		_gameController = gameController; // override on player controller - to pass playerId and Tint.
+	}
 
     void Start()
     {
@@ -38,6 +44,12 @@ public class PlayerWeaponController : MonoBehaviour
                 _activeWeapon = playerWeapon;
                 _activeWeapon.enabled = true;
                 _activeWeapon.ammoCount = ammo;
+				if (weaponType != WeaponBase.WeaponType.basic) {
+					_gameController.updateAmmo(_playerId, ammo.ToString());
+				} else {
+					_gameController.updateAmmo(_playerId, "*");
+				}	
+				
 				return;
             }
         }

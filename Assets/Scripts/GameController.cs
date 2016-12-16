@@ -18,6 +18,8 @@ public class GameController : MonoBehaviour
     public Text player2LivesText;
     public Text player1ScoreText;
     public Text player2ScoreText;
+	public Text player1AmmoText;
+	public Text player2AmmoText;
     public Toggle multiplayerToggle;
 
     public Color player1Color;
@@ -59,20 +61,29 @@ public class GameController : MonoBehaviour
             var player2 = Instantiate(player2Prefab, new Vector3(2, -1, 0), Quaternion.identity) as GameObject;
             p1Controller = player1.GetComponent<PlayerController>();
             p1Controller.Initialize(this, 1, player1Color);
+			PlayerWeaponController p1WeaponC = player1.GetComponent<PlayerWeaponController>();
+			p1WeaponC.Initialize (this);
             player1LivesText.text = "Player 1 health: " + p1Controller.GetPlayerHp() + "%";
 
             p2Controller = player2.GetComponent<PlayerController>();
             p2Controller.Initialize(this, 2, player2Color);
+			PlayerWeaponController p2WeaponC = player2.GetComponent<PlayerWeaponController>();
+			p2WeaponC.Initialize(this);
 			player2LivesText.text = "Player 2 health: " + p2Controller.GetPlayerHp() + "%";
             player1ScoreText.text = "Score: 0";
             player2ScoreText.text = "Score: 0";
+			player1AmmoText.text = "Ammo: *";
+			player2AmmoText.text = "Ammo: *";
         }
         else
         {
             var player1 = Instantiate(playerPrefab, new Vector3(0, -1, 0), Quaternion.identity) as GameObject;
             p1Controller = player1.GetComponent<PlayerController>();
+			PlayerWeaponController p1WeaponC = player1.GetComponent<PlayerWeaponController>();
+			p1WeaponC.Initialize(this);
             p1Controller.Initialize(this, 1, new Color(1, 0.2f, 0.2f));
 			player1LivesText.text = "Player health: " + p1Controller.GetPlayerHp() + "%";
+			player1AmmoText.text = "Ammo: *";
         }
         gameOver = false;
         isPaused = false;
@@ -176,10 +187,6 @@ public class GameController : MonoBehaviour
     void UpdateScore()
     {
         scoreText.text = "Score: " + score;
-        if (isMultiplayer)
-        {
-            //display individual score
-        }
     }
 
     void HighScoreUpdate()
@@ -198,6 +205,17 @@ public class GameController : MonoBehaviour
             }
         }
     }
+
+	public void updateAmmo(int id, string ammo)
+	{
+		if (id == 1) {
+			player1AmmoText.text = "Ammo: " + ammo;
+		}
+		else
+		{
+			player2AmmoText.text = "Ammo: " + ammo;
+		}
+	}
 
     public void GameOver()
     {

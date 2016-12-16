@@ -21,6 +21,7 @@ public class PlayerShotgunWeapon : WeaponBase
             }
             GetComponent<AudioSource>().Play();
             ammoCount--;
+			updateAmmo (ammoCount);
         }
     }
 }

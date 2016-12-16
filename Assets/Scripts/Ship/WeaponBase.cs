@@ -30,4 +30,10 @@ public abstract class WeaponBase : MonoBehaviour
             missileBase.missileSpeed = missileSpeed;
         }
     }
+
+	public void updateAmmo(int ammo)
+	{
+		GameController controller = playerWeaponController._gameController;
+		controller.updateAmmo(_playerId, ammo.ToString());
+	}
 }
