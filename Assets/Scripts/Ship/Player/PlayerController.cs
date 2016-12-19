@@ -96,7 +96,12 @@ public class PlayerController : ShipBase
             return;
         }
 		if (changeAmount < 0) {
-			TintOnHit ();
+            var audioSources = GetComponents<AudioSource>();
+            if (audioSources[1] != null)
+            {
+                audioSources[1].Play();
+            }
+            TintOnHit ();
 		}
         _shipHp += changeAmount;
         _shipHp = _shipHp > maxShipHp ? maxShipHp : _shipHp;

@@ -10,9 +10,11 @@ public class BonusSpeed : MonoBehaviour
         if (other.tag == "Player")
         {
             other.GetComponent<PlayerController>().AddSpeed(speedCof);
-			if (other.GetComponent<AudioSource>() != null)
+            var audioSources = other.GetComponents<AudioSource>();
+
+            if (audioSources != null)
 			{
-				other.GetComponent<AudioSource>().Play();
+                audioSources[0].Play();
 			}
             Destroy(gameObject);
         }

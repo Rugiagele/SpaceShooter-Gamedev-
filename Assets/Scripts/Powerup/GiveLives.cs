@@ -11,10 +11,12 @@ public class GiveLives : MonoBehaviour
         {
             var playerController = other.GetComponent<PlayerController>();
             playerController.ChangeHp(lives);
-			if (other.GetComponent<AudioSource>() != null)
-			{
-				other.GetComponent<AudioSource>().Play();
-			}
+            var audioSources = other.GetComponents<AudioSource>();
+
+            if (audioSources != null)
+            {
+                audioSources[0].Play();
+            }
             Destroy(gameObject);
         }
     }
