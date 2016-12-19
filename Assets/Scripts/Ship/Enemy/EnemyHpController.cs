@@ -10,6 +10,10 @@ public class EnemyHpController : ShipBase
 	{
 		if (isTinted && Time.time > tintExpireTime) {
 			meshRenderer.materials [0].color = originalColor;
+            if(meshRenderer.materials.Length>1)
+            {
+                meshRenderer.materials[1].color = originalColor;
+            }
 			isTinted = false;
 		}
 	}

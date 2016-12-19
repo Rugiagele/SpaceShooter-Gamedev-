@@ -10,7 +10,7 @@ public abstract class ShipBase : MonoBehaviour
     public GameObject explosion;
     protected int _shipHp;
 	public GameController _gameController;
-	private float tintTime = .4f;
+	private float tintTime = .3f;
 	public float tintExpireTime;
 	public Color tintColor = new Color (1, 0, 0);
 	public Color originalColor;
@@ -47,6 +47,10 @@ public abstract class ShipBase : MonoBehaviour
             isTinted = true;
             originalColor = meshRenderer.materials[0].color;
             meshRenderer.materials[0].color *= tintColor;
+            if (meshRenderer.materials.Length>1)
+            {
+                meshRenderer.materials[1].color *= tintColor;
+            }
         }
 		tintExpireTime = Time.time + tintTime;
 	}
